@@ -7,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentComponent implements OnInit {
   checkBtnTxt: string = "CEK"; 
+  customerId: string;
+  accountType: string;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  queryData(){
+    console.log(this.accountType+" : "+ this.customerId);
+    this.customerId = "";
+    this.accountType = "";
   }
 
 }
