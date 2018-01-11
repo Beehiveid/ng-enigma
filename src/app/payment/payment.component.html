@@ -1,13 +1,7 @@
-<div>
-  Tgl: {{ dateNow }}
-</div>
 <form>
   <label>Pilih salah satu:</label>
   <input type="radio" >No. Telepon
   <input type="radio">No. Internet
-  <input type="text" class="txt" name="custNumber" placeholder="073xxxxxxx/111xxxxxx" [(ngModel)]="costumerNumberId">
+  <input type="text" class="txt" name="custNumber" placeholder="073xxxxxxx/111xxxxxx">
 </form>
-<p>
-  {{ costumerNumberId }}
-</p>
 <input type="button" [value]="checkBtnTxt">

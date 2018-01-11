@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  dateNow: string = "1.10.2018";
-  costumerNumberId: string = "0750xxxxx";
   checkBtnTxt: string = "CEK"; 
 
   constructor() { }
