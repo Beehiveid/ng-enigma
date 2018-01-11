@@ -8,3 +8,7 @@ body{
     font-family: 'Raleway', 'Arial';
     color: #ffffff;
 }
+h2, h4{
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
