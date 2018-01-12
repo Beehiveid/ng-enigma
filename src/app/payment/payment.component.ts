@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-payment',
@@ -10,7 +11,7 @@ export class PaymentComponent implements OnInit {
   customerId: string;
   accountType: string;
 
-  constructor() { }
+  constructor(private _data: DataService) { }
 
   ngOnInit() {
     this.accountType = "telepon";
