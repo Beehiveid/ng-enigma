@@ -13,12 +13,13 @@ export class PaymentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.accountType = "telepon";
   }
 
   queryData(){
     console.log(this.accountType+" : "+ this.customerId);
     this.customerId = "";
-    this.accountType = "";
+    this.accountType = "telepon";
   }
 
 }
