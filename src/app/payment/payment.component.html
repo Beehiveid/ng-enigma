@@ -16,6 +16,11 @@
         </div>
     </form>
     <input type="button" class="btn center" [value]="checkBtnTxt" (click)="queryData()">  
+    <ul>
+      <li *ngFor="let goal of goals">
+        {{ goal }}
+      </li>
+    </ul>
   </div>
   <div class="center"></div>
   
