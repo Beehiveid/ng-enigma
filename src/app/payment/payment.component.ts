@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-payment',
@@ -12,12 +11,10 @@ export class PaymentComponent implements OnInit {
   accountType: string;
   goals = [];
 
-  constructor(private _data: DataService) { }
+  constructor() { }
 
   ngOnInit() {
     this.accountType = "telepon";
-    this._data.goal.subscribe(res => this.goals = res );
-    this._data.changeGoal(this.goals);
   }
 
   queryData(){
@@ -26,7 +23,7 @@ export class PaymentComponent implements OnInit {
     console.log(this.accountType+" : "+ this.customerId);
     this.customerId = "";
     this.accountType = "telepon";
-    this._data.changeGoal(this.goals);
+    
   }
 
 }

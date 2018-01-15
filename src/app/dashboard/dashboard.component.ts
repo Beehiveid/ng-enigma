@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,11 +8,10 @@ import { DataService } from '../data.service';
 export class DashboardComponent implements OnInit {
   goals: any;
 
-  constructor(private _data: DataService) { }
+  constructor() { }
 
   ngOnInit() {
-    this._data.goal.subscribe(res => this.goals = res);
-    this._data.changeGoal(this.goals);
+    
   }
 
 }
