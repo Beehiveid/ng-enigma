@@ -1,9 +1,5 @@
-<p>
-  dashboard works!
-</p>
-
 <ul>
-  <li *ngFor="let goal of goals">
-    {{ goal }}
+  <li *ngFor="let bill of bills">
+    {{ bill.NAMA }} | Rp.{{ bill.HARGA }} | {{ bill.TIPE_LAYANAN }}
   </li>
 </ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BillsService } from "../bills.service";
 
 @Component({
   selector: 'app-payment',
@@ -9,17 +10,14 @@ export class PaymentComponent implements OnInit {
   checkBtnTxt: string = "CEK"; 
   customerId: string;
   accountType: string;
-  goals = [];
 
-  constructor() { }
+  constructor(private _bills : BillsService) { }
 
   ngOnInit() {
     this.accountType = "telepon";
   }
 
   queryData(){
-    this.goals.push(this.customerId);
-    
     console.log(this.accountType+" : "+ this.customerId);
     this.customerId = "";
     this.accountType = "telepon";
