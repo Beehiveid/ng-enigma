@@ -1,5 +1,22 @@
-<ul>
-  <li *ngFor="let bill of bills">
-    {{ bill.NAMA }} | Rp.{{ bill.HARGA }} | {{ bill.TIPE_LAYANAN }}
-  </li>
-</ul>
+<div class="container">
+  <div class="col dark">
+    Antrian
+  </div>
+  <div class="col dark">
+    Tagihan
+  </div>
+  <div class="light borad">
+      <ul>
+          <li *ngFor="let bill of bills">
+            {{ bill.NAMA }} | Rp.{{ bill.HARGA }} | {{ bill.TIPE_LAYANAN }} 
+          </li>
+        </ul>
+  </div>
+  <div class="light board">
+      <ul>
+          <li *ngFor="let bill of bills" class="data">
+            {{ bill.NAMA }} | Rp.{{ bill.HARGA }} | {{ bill.TIPE_LAYANAN }} | #{{ bill.ID_TAGIHAN }}
+          </li>
+        </ul>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.container{
+    display: grid;
+    grid-template-columns: 50% auto;
+}
+
+.col{
+    padding: .4em 1.3em;
+}
+
+.dark{
+    background: #4e0101;
+}
+
+.light{
+    background: #a31414;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0 0 2em 0;
+    padding: 0;
+}
+
+ul li{
+    display: block;
+    margin-right: 30px;
+    margin-bottom: .5em;
+}
+
+.data{
+    background: #8b0707;
+    padding: .5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.board{
+    max-height: 75%;
+}
