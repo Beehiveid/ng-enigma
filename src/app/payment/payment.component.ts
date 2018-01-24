@@ -9,7 +9,9 @@ import { BillsService } from "../bills.service";
 export class PaymentComponent implements OnInit {
   checkBtnTxt: string = "CEK"; 
   customerId: string;
+  customerName: string;
   accountType: string;
+  list:any;
 
   constructor(private _bills : BillsService) { }
 
@@ -19,8 +21,17 @@ export class PaymentComponent implements OnInit {
 
   queryData(){
     console.log(this.accountType+" : "+ this.customerId);
+    this._bills.getBill(this.customerId).subscribe(
+      result => {
+        this.list = result;
+        console.log(this.list);
+      }
+    );
+    
+    //this.customerName = this.list(0).NAMA_PELANGGAN;
     this.customerId = "";
     this.accountType = "telepon";
+
     
   }
 
