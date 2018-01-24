@@ -30,9 +30,15 @@
 <div id="myModal" class="modal">
 
   <!-- Modal content -->
-  <div class="modal-content">
+  <div class="modal-content" >
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+    <ul *ngIf="list">
+      Nama Pelanggan: {{ list[0].NAMA_PELANGGAN }}
+      <li *ngFor="let data of list">
+        Layanan {{ data.NAMA_LAYANAN }}
+        Rp {{ data.HARGA }}
+      </li>
+    </ul>
   </div>
 
 </div>

@@ -12,4 +12,8 @@ export class BillsService {
   getBills(): Observable<any>{
     return this.http.get<any>("http://localhost:3000/bills");
   }
+
+  getBill(id:any): Observable<any>{
+    return this.http.get<any>("http://localhost:3000/bills/"+id);
+  }
 }
