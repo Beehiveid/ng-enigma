@@ -23,7 +23,6 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit() {
     this.accountType = "telepon";
-    this.customerId = "1119293002";
     this.total = 0;
     this.modal = false;
     this.notification = false;
