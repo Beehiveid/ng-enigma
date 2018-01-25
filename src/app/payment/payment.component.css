@@ -51,6 +51,7 @@ div{
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 /* Modal Content/Box */
@@ -59,7 +60,7 @@ div{
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
     color: #000000;
 }
 
@@ -80,4 +81,33 @@ div{
 
 ul li.numberic{
     list-style-type: decimal-leading-zero;
+}
+
+
+.btn{
+    border: none;
+    padding: 1em 2em;
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.btn.yes{
+    background: #137013;
+    color: #ffffff;
+}
+
+.btn.yes:hover{
+    background: #125a12;
+}
+
+.btn.no{
+    background: #971515;
+    color: #ffffff;
+}
+
+.btn.no:hover{
+    background: #861616;
 }

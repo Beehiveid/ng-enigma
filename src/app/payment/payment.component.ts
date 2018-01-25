@@ -36,7 +36,6 @@ export class PaymentComponent implements OnInit {
       }
     );
     
-    //this.customerName = this.list(0).NAMA_PELANGGAN;
     this.customerId = "";
     this.accountType = "telepon";
   }

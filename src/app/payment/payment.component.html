@@ -35,8 +35,12 @@
         </div>
       </li>
       <div *ngIf="list">
-          Total tagihan <b>{{ total | currency:'IDR' }}</b>
-        </div>
+        Total tagihan <b>{{ total | currency:'IDR' }}</b>
+      </div>
+      <div>
+        <button class="btn yes">Ya</button>
+        <button class="btn no">Tidak</button>
+      </div>
     </ul>
     
 </div>
