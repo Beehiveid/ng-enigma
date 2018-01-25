@@ -31,8 +31,6 @@ export class PaymentComponent implements OnInit {
 
   queryData(){
     this.modal = true;
-    console.log(this.accountType+" : "+ this.customerId);
-
     this._bills.getBill(this.customerId).subscribe(
       result => {
         this.list = result;
@@ -50,16 +48,12 @@ export class PaymentComponent implements OnInit {
   }
 
   queueBills(){
-    console.log(this.list);
-    console.log("idx"+this.idx);
     let obj = {
       "id" : this.idx,
       "status" : 9
     }
-    console.log(obj);
     this._bills.postBills(obj).subscribe(
       result => {
-        console.log(result);
         if(result.affectedRows > 0 && result.warningCount == 0){
           this.showNotification(1);
         }else{
