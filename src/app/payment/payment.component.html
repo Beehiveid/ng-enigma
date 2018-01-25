@@ -15,18 +15,18 @@
           *Jika anda memiliki lebih dari satu layanan, maka tagihan yang muncul adalah total tagihan yang belum dibayarkan
         </div>
     </form>
-    <input type="button" id="myBtn" class="btn center" [value]="checkBtnTxt" (click)="queryData()">
-    1119293002
+    <input type="button" class="btn center" [value]="checkBtnTxt" (click)="queryData()">
+    1119293002 - 111847432
   </div>
   <div class="center"></div>
   
 </div>
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div class="modal" *ngIf="modal">
   <!-- Modal content -->
   <div class="modal-content" >
-    <span class="close">&times;</span>
+    <span class="close" (click)="closeModal()">&times;</span>
     <ul *ngIf="list">
       <h3>Detail Tagihan</h3>
       <li class="numberic" *ngFor="let data of list; index as i;" [attr.data-index]="i">
@@ -38,9 +38,18 @@
         Total tagihan <b>{{ total | currency:'IDR' }}</b>
       </div>
       <div>
-        <button class="btn yes">Ya</button>
-        <button class="btn no">Tidak</button>
+        <button class="btn yes" (click)="queueBills()">Accept</button>
+        <button class="btn no" (click)="closeModal()">Cancel</button>
       </div>
     </ul>
-    
+  </div>
 </div>
+
+<div class="modal" *ngIf="notification">
+  <!-- Modal content -->
+  <div class="modal-content" >
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>Silahkan bayar di loket</p>
+  </div>
+</div>
+
