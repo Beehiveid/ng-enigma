@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BillsService } from "../bills.service";
+import { log } from 'util';
 
 @Component({
   selector: 'app-payment',
@@ -12,11 +13,15 @@ export class PaymentComponent implements OnInit {
   customerName: string;
   accountType: string;
   list:any;
+  obj = [];
+  total: number;
 
   constructor(private _bills : BillsService) { }
 
   ngOnInit() {
     this.accountType = "telepon";
+    this.customerId = "1119293002";
+    this.total = 0;
   }
 
   queryData(){
@@ -24,15 +29,15 @@ export class PaymentComponent implements OnInit {
     this._bills.getBill(this.customerId).subscribe(
       result => {
         this.list = result;
-        console.log(this.list);
+        this.total = 0;
+        for(let data of this.list){
+          this.total += data.HARGA;
+        }
       }
     );
     
     //this.customerName = this.list(0).NAMA_PELANGGAN;
     this.customerId = "";
     this.accountType = "telepon";
-
-    
   }
-
 }
