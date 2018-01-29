@@ -10,13 +10,17 @@ import { PaymentComponent } from './payment/payment.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { BillsService } from "./bills.service";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PaymentComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     HttpClientModule,
