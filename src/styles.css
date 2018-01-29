@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-
+/*
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
-
+*/
 html, body{
     overflow:hidden;
 }
@@ -9,7 +9,7 @@ html, body{
 body{
     background: #7a0404;
     padding: 3em;
-    font-family: 'Raleway', 'Arial';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
 }
 h2, h4{
@@ -23,20 +23,3 @@ h2, h4.center{
     text-align: center;
 }
 
-.container{
-    display: grid;
-    grid-template-columns: 20% 60% 20% auto;
-    margin-bottom: 2em;
-}
-
-.right{
-    float: right;
-}
-
-.shadow{
-    filter: drop-shadow(1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(-1px -1px 0 white);
-          
-}
