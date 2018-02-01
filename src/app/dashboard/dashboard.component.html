@@ -4,9 +4,23 @@
       <input type="text" class="txt" name="id" placeholder="User ID" [(ngModel)]="userId">
   </div>
   <button class="btn" (click)="getQueuedBills()">Submit</button>
-  1119293002
+  1119293002 || 111847432
 </form>
 
 <div class="content">
-  
+  <div *ngIf="queuedBills.id != null">
+    <div>
+        ({{ queuedBills.id }}) - {{ queuedBills.nama }}
+    </div>
+    <h4>Detail</h4>
+    <div *ngFor="let bill of queuedBills.details">
+      Layanan {{ bill.NAMA_LAYANAN }} {{ bill.HARGA | currency:'IDR' }}
+    </div>
+    Total: {{ queuedBills.total | currency:'IDR' }}
+    
+  </div>
+
+  <div *ngIf="queuedBills.id == null">
+    <h4>Tidak ada tagihan yang mengantri untuk ID ini</h4>
+  </div>
 </div>
