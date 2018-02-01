@@ -7,13 +7,14 @@ import { BillsService } from "../bills.service";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  goals: any;
   bills: any;
+  userId: any;
+  queuedBills: any;
 
   constructor(private _bills : BillsService) { }
 
   ngOnInit() {
-    this.getBills();
+    
   }
 
   getBills(){
@@ -21,6 +22,15 @@ export class DashboardComponent implements OnInit {
     .subscribe(result =>{
       this.bills = result;
       console.log("this.bills"+this.bills);
+    });
+  }
+
+  getQueuedBills(){
+    this.queuedBills = [];
+    this._bills.getQueuedBill(this.userId, 9)
+    .subscribe(result => {
+      console.log(result);
+      this.queuedBills = result;
     });
   }
 

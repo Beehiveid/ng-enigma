@@ -17,6 +17,10 @@ export class BillsService {
     return this.http.get<any>("http://localhost:3000/bills/"+id);
   }
 
+  getQueuedBill(id: any, stats: any): Observable<any>{
+    return this.http.get<any>("http://localhost:3000/bills/"+id+"/"+stats);
+  }
+
   postBills(obj: any): Observable<any>{
     return this.http.post<any>("http://localhost:3000/bills/paybills",obj);
   }

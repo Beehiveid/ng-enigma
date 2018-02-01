@@ -1,22 +1,12 @@
-<div class="container">
-  <div class="col dark">
-    Antrian
+<form>
+  <div class="input">
+      <label>User Id:</label>
+      <input type="text" class="txt" name="id" placeholder="User ID" [(ngModel)]="userId">
   </div>
-  <div class="col dark">
-    Tagihan
-  </div>
-  <div class="light borad">
-      <ul>
-          <li *ngFor="let bill of bills">
-            {{ bill.NAMA }} | Rp.{{ bill.HARGA }} | {{ bill.TIPE_LAYANAN }} 
-          </li>
-        </ul>
-  </div>
-  <div class="light board">
-      <ul>
-          <li *ngFor="let bill of bills" class="data">
-            {{ bill.NAMA }} | Rp.{{ bill.HARGA }} | {{ bill.TIPE_LAYANAN }} | #{{ bill.ID_TAGIHAN }}
-          </li>
-        </ul>
-  </div>
+  <button class="btn" (click)="getQueuedBills()">Submit</button>
+  1119293002
+</form>
+
+<div class="content">
+  
 </div>
