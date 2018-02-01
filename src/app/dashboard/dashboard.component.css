@@ -1,9 +1,12 @@
+.info{
+    display: grid;
+    grid-template-columns: 25% 55% auto;
+}
 div.input input.txt{
     padding: 1em;
     display: block;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
-
 
 div.input{
     display: inline-block;
@@ -11,20 +14,105 @@ div.input{
 
 button.btn{
     border-style: solid;
-    border-color: #fff;
     border-width: 2px;
+    border-color: #0c93c9;
     padding: 1em;
-    background: none;
+    background: #0c93c9;
     color: #ffffff;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 button.btn:hover{
-    background: #fff;
-    color: #0f7ebe;
+    background: #1fafe7;
 }
 
+button.btn.yes{
+    border-style: none;
+    background: #137013;
+    padding: 1em 2em;
+}
+
+button.btn.no{
+    border-style: none;
+    background: #580303;
+    padding: 1em 2em;
+}
+
+button.btn.yes:hover{
+    background: #209920;
+    color: #fff;
+}
+
+button.btn.no:hover{
+    background: #7a0404;
+    color: #fff;
+}
+
+
 .content{
-    margin: 1em 0;
+    margin: .2em 0;
     padding: 1em;
 }
+
+.header{
+    padding: .6em;
+    font-size: 1.5em;
+    background: #580303;
+}
+
+.data{
+    padding: 1em; 
+    background: #a00d0d;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+div.card{
+    background: #fff;
+    border-bottom-style: solid;
+    display: inline-block;
+    padding: 1em 2em 1em 1em;
+    margin: .5em;
+    color: #137013;
+    border-radius: 5px 5px 10px 10px;
+}
+
+div.card > .title{
+    font-size: .8em;
+    text-align: right;
+    /* font-weight: bolder; */
+}
+
+div.card > .price{
+    font-size: 1.3em;
+    text-align: right;
+}
+
+.data > .row{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.personal{
+    /* padding: 1em; */
+}
+
+.personal > .name{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.personal > .id{
+    font-size: .65em;
+}
+
+.personal > .id::before{
+    content: "NCLI-";
+}
+
+form{
+    padding: 1em;
+}
+

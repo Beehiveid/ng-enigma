@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BillsService } from "../bills.service";
+import { isEmpty } from 'rxjs/operators/isEmpty';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor(private _bills : BillsService) { }
 
   ngOnInit() {
-    
+    this.queuedBills = null;
   }
 
   getBills(){
@@ -29,7 +30,6 @@ export class DashboardComponent implements OnInit {
     this.queuedBills = [];
     this._bills.getQueuedBill(this.userId, 9)
     .subscribe(result => {
-      console.log(result);
       this.queuedBills = result;
     });
   }
