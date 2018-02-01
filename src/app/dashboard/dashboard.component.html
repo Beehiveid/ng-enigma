@@ -1,22 +1,43 @@
-<div class="container">
-  <div class="col dark">
-    Antrian
+<form>
+  <div class="input">
+      <label>User Id:</label>
+      <input type="text" class="txt" name="user" placeholder="User ID" [(ngModel)]="userId">
   </div>
-  <div class="col dark">
-    Tagihan
+  <button class="btn" (click)="getQueuedBills()">Submit</button>
+  1119293002 || 111847432
+</form>
+
+<div class="content">
+  <div class="info" *ngIf="queuedBills; else emptyblock">
+    <div class="header">Info Pelanggan</div>
+    <div class="header">Detail Tagihan</div>
+    <div class="header">Aksi</div>
+    <div class="data">
+      <div class="personal">
+        <div class="name">{{ queuedBills.nama }}</div>
+        <div class="id">{{ queuedBills.id }}</div>
+      </div>
+    </div>
+    <div class="data">
+        Total: {{ queuedBills.total | currency:'IDR' }}
+        <div class="row">
+          <div class="card" *ngFor="let bill of queuedBills.details">
+            <div class="price">
+              {{ bill.HARGA | currency:'IDR' }}
+            </div>
+            <div class="title">
+              {{ bill.NAMA_LAYANAN }}
+            </div>
+          </div>
+        </div>
+        
+    </div>
+    <div class="data">
+        <button class="btn yes">Bayar</button>
+        <button class="btn no">Batal</button>
+    </div>
   </div>
-  <div class="light borad">
-      <ul>
-          <li *ngFor="let bill of bills">
-            {{ bill.NAMA }} | Rp.{{ bill.HARGA }} | {{ bill.TIPE_LAYANAN }} 
-          </li>
-        </ul>
-  </div>
-  <div class="light board">
-      <ul>
-          <li *ngFor="let bill of bills" class="data">
-            {{ bill.NAMA }} | Rp.{{ bill.HARGA }} | {{ bill.TIPE_LAYANAN }} | #{{ bill.ID_TAGIHAN }}
-          </li>
-        </ul>
-  </div>
+  <ng-template #emptyblock>
+      <h4>Tidak ada tagihan yang mengantri untuk ID ini</h4>
+  </ng-template>
 </div>
