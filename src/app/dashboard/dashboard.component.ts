@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   bills: any;
   userId: any;
   queuedBills: any;
+  notification: boolean;
 
   constructor(private _bills : BillsService) { }
 
@@ -32,6 +33,20 @@ export class DashboardComponent implements OnInit {
     .subscribe(result => {
       this.queuedBills = result;
     });
+  }
+
+  showModal(stats: boolean){
+    console.log(stats);
+    this.notification = true;
+    if(stats){
+      console.log("Queued bills dilunasi");
+    }else{
+      console.log("Queued bills dibatalkan");
+    }
+  }
+
+  closeModal(){
+    this.notification = false;
   }
 
 }

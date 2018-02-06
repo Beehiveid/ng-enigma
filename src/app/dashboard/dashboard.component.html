@@ -29,15 +29,31 @@
               {{ bill.NAMA_LAYANAN }}
             </div>
           </div>
+          <div class="card">
+            <div class="price">
+              {{ 500000 | currency:'IDR' }}
+            </div>
+            <div class="title">
+              Temporary
+            </div>
+          </div>
         </div>
         
     </div>
     <div class="data">
-        <button class="btn yes">Bayar</button>
-        <button class="btn no">Batal</button>
+        <button class="btn yes" (click)="showModal(true)">Bayar</button>
+        <button class="btn no" (click)="showModal(false)">Batal</button>
     </div>
   </div>
   <ng-template #emptyblock>
       <h4>Tidak ada tagihan yang mengantri untuk ID ini</h4>
   </ng-template>
+</div>
+
+<div class="modal" *ngIf="notification">
+  <!-- Modal content -->
+  <div class="modal-content" >
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>Silahkan bayar di loket</p>
+  </div>
 </div>
