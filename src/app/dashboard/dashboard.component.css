@@ -5,7 +5,6 @@
 div.input input.txt{
     padding: 1em;
     display: block;
-    /* font-weight: bold; */
 }
 
 div.input{
@@ -79,8 +78,6 @@ div.card > .title{
     text-align: left;
     padding: .5em 1em .7em;;
     background: #580303;
-    /* font-weight: 400; */
-    /* font-weight: bolder; */
 }
 
 div.card > .price{
