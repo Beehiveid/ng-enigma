@@ -18,10 +18,10 @@
         <div class="id">{{ queuedBills.id }}</div>
       </div>
     </div>
-    <div class="data">
+    <div class="data" [@bills] = "queuedBills.details.length">
         Total: {{ queuedBills.total | currency:'IDR' }}
         <div class="row">
-          <div class="card" *ngFor="let bill of queuedBills.details">
+          <div class="card" *ngFor="let bill of queuedBills.details; let i = index;" (click)="removeItem(i)">
             <div class="price">
               {{ bill.HARGA | currency:'IDR' }}
             </div>
