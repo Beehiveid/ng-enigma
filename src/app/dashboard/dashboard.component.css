@@ -70,24 +70,26 @@ ul li{
 }
 
 div.card{
-    background: #fff;
-    border-bottom-style: solid;
-    display: inline-block;
-    padding: 1em 2em 1em 1em;
     margin: .5em;
-    color: #137013;
-    border-radius: 5px 5px 10px 10px;
+    cursor: pointer;
 }
 
 div.card > .title{
     font-size: .8em;
-    text-align: right;
+    text-align: left;
+    padding: .5em 1em .7em;;
+    background: #580303;
+    /* font-weight: 400; */
     /* font-weight: bolder; */
 }
 
 div.card > .price{
     font-size: 1.3em;
     text-align: right;
+    background: #810b0b; 
+    padding: .5em 1em;
+    font-weight: 300;
+    
 }
 
 .data > .row{

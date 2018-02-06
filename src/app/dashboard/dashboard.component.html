@@ -22,12 +22,13 @@
         Total: {{ queuedBills.total | currency:'IDR' }}
         <div class="row">
           <div class="card" *ngFor="let bill of queuedBills.details">
-            <div class="price">
-              {{ bill.HARGA | currency:'IDR' }}
-            </div>
             <div class="title">
               {{ bill.NAMA_LAYANAN }}
             </div>
+            <div class="price">
+              {{ bill.HARGA | currency:'IDR' }}
+            </div>
+            
           </div>
           <div class="card">
             
@@ -39,12 +40,13 @@
             </div>
           </div>
           <div class="card">
-            <div class="price">
-              {{ 500000 | currency:'IDR' }}
-            </div>
             <div class="title">
               Temporary
             </div>
+            <div class="price">
+              {{ 500000 | currency:'IDR' }}
+            </div>
+            
           </div>
         </div>
         
