@@ -8,7 +8,7 @@
 </form>
 
 <div class="content">
-  <div class="info" *ngIf="queuedBills; else emptyblock">
+  <div class="info" *ngIf="queuedBills; else emptyblock" [@bills] = "queuedBills.details.length">
     <div class="header">Info Pelanggan</div>
     <div class="header">Detail Tagihan</div>
     <div class="header">Aksi</div>
@@ -18,7 +18,7 @@
         <div class="id">{{ queuedBills.id }}</div>
       </div>
     </div>
-    <div class="data" [@bills] = "queuedBills.details.length">
+    <div class="data" >
         Total: {{ queuedBills.total | currency:'IDR' }}
         <div class="row">
           <div class="card" *ngFor="let bill of queuedBills.details; let i = index;" (click)="removeItem(i)">
@@ -30,7 +30,6 @@
             </div>
           </div>
         </div>
-        
     </div>
     <div class="data">
         <button class="btn yes" (click)="showModal(true)">Bayar</button>
