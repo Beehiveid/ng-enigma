@@ -29,28 +29,25 @@ export class DashboardComponent implements OnInit {
   bills: any;
   userId: any;
   queuedBills: any;
-  notification: boolean;
+  message: String;
 
   constructor(private _bills : BillsService) { }
 
   ngOnInit() {
-    this.queuedBills = null;
-  }
-
-  getBills(){
-    this._bills.getBills()
-    .subscribe(result =>{
-      this.bills = result;
-      console.log("this.bills"+this.bills);
-    });
+    this.queuedBills = {};
+    this.message = null;
   }
 
   getQueuedBills(){
-    this.queuedBills = [];
+    this.queuedBills = {};
     let id = this.userId.trim();
     this._bills.getQueuedBill(id, 9)
     .subscribe(result => {
       this.queuedBills = result;
+
+      if(this.queuedBills.details == undefined){
+        this.message = "Tidak ada antrian untuk ID " + id;
+      }
     });
   }
 
@@ -60,7 +57,6 @@ export class DashboardComponent implements OnInit {
       idx.push(this.queuedBills.details[i].ID_TAGIHAN);
     }
     console.log(stats);
-    this.notification = true;
     if(stats){
       console.log("Queued bills dilunasi");
       this.payQueuedBills(idx, 1);
@@ -68,10 +64,6 @@ export class DashboardComponent implements OnInit {
       console.log("Queued bills dibatalkan");
       this.payQueuedBills(idx, 0);
     }
-  }
-
-  closeModal(){
-    this.notification = false;
   }
 
   removeItem(index){
@@ -87,8 +79,17 @@ export class DashboardComponent implements OnInit {
     this._bills.postBills(obj).subscribe(
       result => {
         console.log(result);
+        if((result.affectedRows > 0) && (result.warningCount == 0))
+        {
+          this.queuedBills = {};
+        }
+
+        if(stats){
+          this.message = "Pembayaran tagihan berhasil";
+        }else{
+          this.message = "Pembayaran tagihan dibatalkan";
+        }
       }
     );
-
   }
 }

@@ -8,7 +8,7 @@
 </form>
 
 <div class="content">
-  <div class="info" *ngIf="queuedBills; else emptyblock" [@bills] = "queuedBills.details.length">
+  <div class="info" *ngIf="queuedBills.details; else emptyblock" [@bills] = "queuedBills.details">
     <div class="header">Info Pelanggan</div>
     <div class="header">Detail Tagihan</div>
     <div class="header">Aksi</div>
@@ -37,7 +37,7 @@
     </div>
   </div>
   <ng-template #emptyblock>
-      <h4>Tidak ada tagihan yang mengantri untuk ID ini</h4>
+      <h4>{{ message }}</h4>
   </ng-template>
 </div>
 
