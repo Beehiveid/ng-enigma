@@ -16,7 +16,7 @@ input.txt{
     box-sizing: border-box;
 }
 
-input.btn{
+button.btn{
     border: 0;
     display: block;
     padding: 1em 3em;

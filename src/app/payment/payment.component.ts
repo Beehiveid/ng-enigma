@@ -8,7 +8,6 @@ import { Bills } from '../bills.enum';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-  checkBtnTxt: string = "CEK"; 
   customerId: string;
   customerName: string;
   accountType: string;
