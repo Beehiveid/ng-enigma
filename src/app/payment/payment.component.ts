@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BillsService } from "../bills.service";
-import { log } from 'util';
+import { Bills } from '../bills.enum';
 
 @Component({
   selector: 'app-payment',
@@ -49,7 +49,7 @@ export class PaymentComponent implements OnInit {
   queueBills(){
     let obj = {
       "id" : this.idx,
-      "status" : 9
+      "status" : Bills.QUEUED
     }
     this._bills.postBills(obj).subscribe(
       result => {

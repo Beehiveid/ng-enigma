@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BillsService } from "../bills.service";
 import { trigger, style, animate, transition, keyframes, query, stagger } from "@angular/animations";
+import { Bills } from "../bills.enum";
 
 @Component({
   selector: 'app-dashboard',
@@ -41,7 +42,7 @@ export class DashboardComponent implements OnInit {
   getQueuedBills(){
     this.queuedBills = {};
     let id = this.userId.trim();
-    this._bills.getQueuedBill(id, 9)
+    this._bills.getQueuedBill(id, Bills.QUEUED)
     .subscribe(result => {
       this.queuedBills = result;
 
@@ -59,10 +60,10 @@ export class DashboardComponent implements OnInit {
     console.log(stats);
     if(stats){
       console.log("Queued bills dilunasi");
-      this.payQueuedBills(idx, 1);
+      this.payQueuedBills(idx, Bills.PAID);
     }else{
       console.log("Queued bills dibatalkan");
-      this.payQueuedBills(idx, 0);
+      this.payQueuedBills(idx, Bills.IDLE);
     }
   }
 
@@ -84,7 +85,7 @@ export class DashboardComponent implements OnInit {
           this.queuedBills = {};
         }
 
-        if(stats){
+        if(stats == Bills.PAID){
           this.message = "Pembayaran tagihan berhasil";
         }else{
           this.message = "Pembayaran tagihan dibatalkan";
