@@ -18,6 +18,7 @@ export class PaymentComponent implements OnInit {
   modal: boolean;
   notification: boolean;
   bills: any;
+  error: any;
 
   constructor(private _bills : BillsService) { }
 
@@ -27,12 +28,16 @@ export class PaymentComponent implements OnInit {
     this.notification = false;
     this.customerId = null;
     this.bills = {};
+    this.error = {};
   }
 
   queryData(){
+    let el = document.getElementById("custId");
     try {
       if(String.IsNullOrWhiteSpace(this.customerId)){
         this.customerId = null;
+        this.error.message = "Masukkan ID konsumen anda";
+        el.classList.add("error");
         throw({"message":"Costumer ID tidak boleh kosong"});
       }else{
         this.modal = true;
@@ -40,7 +45,8 @@ export class PaymentComponent implements OnInit {
           result => {
             this.bills = result;
             console.log(this.bills);
-            
+            this.error = {};
+            el.classList.remove("error");
           }
         );
       this.customerId = null;

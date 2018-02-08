@@ -8,9 +8,11 @@
             <input type="radio" value = "telepon" name="accountType" [(ngModel)] = "accountType">No. Telepon
             <input type="radio" value = "internet" name="accountType" [(ngModel)] = "accountType">No. Internet
           </div>
-          <label>No. Telepon / Internet</label>
+          
           <div>
-            <input type="text" class="txt" name="custNumber" placeholder="073xxxxxxx/111xxxxxx" [(ngModel)] = "customerId">
+            <label>No. Telepon / Internet</label>
+            <input type="text" class="txt" id="custId" name="custNumber" placeholder="073xxxxxxx/111xxxxxx" [(ngModel)] = "customerId">
+            <label class="error" *ngIf="error.message" for="custNumber">{{ error.message }}</label>
           </div>
           <div class="small">
             *Jika anda memiliki lebih dari satu layanan, maka tagihan yang muncul adalah total tagihan yang belum dibayarkan
