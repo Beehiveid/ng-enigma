@@ -47,7 +47,9 @@ export class DashboardComponent implements OnInit {
     try {
       if(String.IsNullOrWhiteSpace(this.userId)){
         this.userId = null;
-        this.error.message = "Masukkan ID konsumen anda";
+        this.error.message = "Masukkan ID konsumen";
+        this.queuedBills = {};
+        this.message = null;
         el.classList.add("error");
         throw("Customer ID tidak boleh kosong")
       }
@@ -58,6 +60,8 @@ export class DashboardComponent implements OnInit {
       .subscribe(result => {
         this.queuedBills = result;
 
+        this.error = {};
+        el.classList.remove("error");
         if(this.queuedBills.details == undefined){
           this.message = "Tidak ada antrian untuk ID " + id;
         }

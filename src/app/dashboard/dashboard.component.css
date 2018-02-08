@@ -2,13 +2,15 @@
     display: grid;
     grid-template-columns: 25% 55% auto;
 }
-div.input input.txt{
+div.input > input.txt{
     padding: 1em;
     display: block;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 div.input{
-    display: inline-block;
+    display: block;
 }
 
 button.btn{
