@@ -3,6 +3,11 @@
     grid-template-columns: 20% 60% 20% auto;
 }
 
+.details{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
 .col{
     padding: .4em 1.3em;
 }
@@ -47,7 +52,7 @@ div{
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 60%; /* Could be more or less, depending on screen size */
@@ -140,6 +145,17 @@ label.error::before{
 
 button:focus{
     outline: none;
+}
+
+.info{
+    display: block;
+    background: #c3f8c3;
+    color:#055205;
+    padding: .5em;
+    font-size: .7em;
+    font-weight: bold;
+    border: solid #055205 1px;
+    border-radius: 2px;
 }
 
 
