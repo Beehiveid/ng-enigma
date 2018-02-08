@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
   getQueuedBills(){
     this.queuedBills = {};
     let id = this.userId.trim();
-    this._bills.getQueuedBill(id, Bills.QUEUED)
+    this._bills.getBill(id, Bills.QUEUED)
     .subscribe(result => {
       this.queuedBills = result;
 

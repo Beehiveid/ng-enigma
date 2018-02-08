@@ -16,27 +16,26 @@
             *Jika anda memiliki lebih dari satu layanan, maka tagihan yang muncul adalah total tagihan yang belum dibayarkan
           </div>
       </form>
-      <button class="btn center" (click) = "queryData()">CEK</button>
+      <button class="btn wide" (click) = "queryData()">CEK</button>
     </div>
     <div class="center"></div>
   </div>
 
-
-
 <!-- The Modal -->
-<div class="modal" *ngIf="modal">
+<div class="modal" *ngIf="bills.details">
   <!-- Modal content -->
   <div class="modal-content" >
     <span class="close" (click)="closeModal()">&times;</span>
-    <ul *ngIf="list">
-      <h3>Detail Tagihan</h3>
-      <li class="numberic" *ngFor="let data of list; index as i;" [attr.data-index]="i">
+    <ul>
+      <h3>{{ bills.nama}} NCLI-{{bills.id}}</h3>
+      <h4>Detail</h4>
+      <li class="numberic" *ngFor="let data of bills.details; index as i;" [attr.data-index]="i">
         <div>
           Layanan {{ data.NAMA_LAYANAN }} {{ data.HARGA | currency:'IDR' }}
         </div>
       </li>
       <div *ngIf="list">
-        Total tagihan <b>{{ total | currency:'IDR' }}</b>
+        Total tagihan <b>{{ bills.total | currency:'IDR' }}</b>
       </div>
       <div>
         <button class="btn yes" (click)="queueBills()">Accept</button>
