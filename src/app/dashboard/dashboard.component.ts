@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BillsService } from "../bills.service";
 import { trigger, style, animate, transition, keyframes, query, stagger } from "@angular/animations";
+import { Bills } from "../bills.enum";
+import { String } from 'typescript-string-operations';
 
 @Component({
   selector: 'app-dashboard',
@@ -30,25 +32,45 @@ export class DashboardComponent implements OnInit {
   userId: any;
   queuedBills: any;
   message: String;
+  error:any;
 
   constructor(private _bills : BillsService) { }
 
   ngOnInit() {
     this.queuedBills = {};
     this.message = null;
+    this.error = {};
   }
 
   getQueuedBills(){
-    this.queuedBills = {};
-    let id = this.userId.trim();
-    this._bills.getQueuedBill(id, 9)
-    .subscribe(result => {
-      this.queuedBills = result;
-
-      if(this.queuedBills.details == undefined){
-        this.message = "Tidak ada antrian untuk ID " + id;
+    let el = document.getElementById("custId");
+    try {
+      if(String.IsNullOrWhiteSpace(this.userId)){
+        this.userId = null;
+        this.error.message = "Masukkan ID konsumen";
+        this.queuedBills = {};
+        this.message = null;
+        el.classList.add("error");
+        throw("Customer ID tidak boleh kosong")
       }
-    });
+
+      this.queuedBills = {};
+      let id = this.userId.trim();
+      this._bills.getBill(id, Bills.QUEUED)
+      .subscribe(result => {
+        this.queuedBills = result;
+
+        this.error = {};
+        el.classList.remove("error");
+        if(this.queuedBills.details == undefined){
+          this.message = "Tidak ada antrian untuk ID " + id;
+        }
+      });
+    } catch (error) {
+      console.log(error);
+      
+    }
+    
   }
 
   showModal(stats: boolean){
@@ -59,10 +81,10 @@ export class DashboardComponent implements OnInit {
     console.log(stats);
     if(stats){
       console.log("Queued bills dilunasi");
-      this.payQueuedBills(idx, 1);
+      this.payQueuedBills(idx, Bills.PAID);
     }else{
       console.log("Queued bills dibatalkan");
-      this.payQueuedBills(idx, 0);
+      this.payQueuedBills(idx, Bills.IDLE);
     }
   }
 
@@ -84,7 +106,7 @@ export class DashboardComponent implements OnInit {
           this.queuedBills = {};
         }
 
-        if(stats){
+        if(stats == Bills.PAID){
           this.message = "Pembayaran tagihan berhasil";
         }else{
           this.message = "Pembayaran tagihan dibatalkan";

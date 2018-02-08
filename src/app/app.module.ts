@@ -14,6 +14,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
+import { String, StringBuilder } from "typescript-string-operations";
+
 
 @NgModule({
   declarations: [

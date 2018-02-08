@@ -1,9 +1,15 @@
 <form>
-  <div class="input">
-      <label>User Id:</label>
-      <input type="text" class="txt" name="user" placeholder="User ID" [(ngModel)]="userId">
+  <div class="info">
+    <div class="input">
+        <input type="text" class="txt" id="custId" name="user" placeholder="User ID" [(ngModel)]="userId">
+        <label class="error" *ngIf="error.message" for="userid">{{ error.message }}</label>
+    </div>
+    <div>
+        <button class="btn" (click)="getQueuedBills()">Submit</button>
+    </div>
+    
   </div>
-  <button class="btn" (click)="getQueuedBills()">Submit</button>
+  
 </form>
 
 <div class="content">

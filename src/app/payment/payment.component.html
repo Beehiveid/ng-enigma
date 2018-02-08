@@ -8,35 +8,36 @@
             <input type="radio" value = "telepon" name="accountType" [(ngModel)] = "accountType">No. Telepon
             <input type="radio" value = "internet" name="accountType" [(ngModel)] = "accountType">No. Internet
           </div>
-          <label>No. Telepon / Internet</label>
+          
           <div>
-            <input type="text" class="txt" name="custNumber" placeholder="073xxxxxxx/111xxxxxx" [(ngModel)] = "customerId">
+            <label>No. Telepon / Internet</label>
+            <input type="text" class="txt" id="custId" name="custNumber" placeholder="073xxxxxxx/111xxxxxx" [(ngModel)] = "customerId">
+            <label class="error" *ngIf="error.message" for="custNumber">{{ error.message }}</label>
           </div>
           <div class="small">
             *Jika anda memiliki lebih dari satu layanan, maka tagihan yang muncul adalah total tagihan yang belum dibayarkan
           </div>
       </form>
-      <input type="button" class="btn center" [value]="checkBtnTxt" (click)="queryData()">
+      <button class="btn wide" (click) = "queryData()">CEK</button>
     </div>
     <div class="center"></div>
   </div>
 
-
-
 <!-- The Modal -->
-<div class="modal" *ngIf="modal">
+<div class="modal" *ngIf="bills.details">
   <!-- Modal content -->
   <div class="modal-content" >
     <span class="close" (click)="closeModal()">&times;</span>
-    <ul *ngIf="list">
-      <h3>Detail Tagihan</h3>
-      <li class="numberic" *ngFor="let data of list; index as i;" [attr.data-index]="i">
+    <ul>
+      <h3>{{ bills.nama}} NCLI-{{bills.id}}</h3>
+      <h4>Detail</h4>
+      <li class="numberic" *ngFor="let data of bills.details; index as i;" [attr.data-index]="i">
         <div>
           Layanan {{ data.NAMA_LAYANAN }} {{ data.HARGA | currency:'IDR' }}
         </div>
       </li>
       <div *ngIf="list">
-        Total tagihan <b>{{ total | currency:'IDR' }}</b>
+        Total tagihan <b>{{ bills.total | currency:'IDR' }}</b>
       </div>
       <div>
         <button class="btn yes" (click)="queueBills()">Accept</button>
