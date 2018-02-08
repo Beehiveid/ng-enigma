@@ -155,3 +155,36 @@ form{
     text-decoration: none;
     cursor: pointer;
 }
+
+label.error{
+    background: #fab7b7;
+    /* background: #fff;  */
+    color:#860d0d;
+    display: block;
+    font-size: .8em;
+    padding: .5em;
+    padding-top: .3em;
+    border-radius: 0px 0px 3px 3px;
+    font-weight: bold;
+}
+
+label.error::before{
+    content: '*'
+}
+
+.txt.error{
+    border: solid #fab7b7;
+    /* border: solid #fff; */
+    border-bottom:none;
+    
+    border-radius: 3px 3px 0px 0px;
+}
+
+.txt:focus{
+    background: #fff;
+    outline: none;
+}
+
+button:focus{
+    outline: none;
+}
