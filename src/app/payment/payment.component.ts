@@ -43,10 +43,15 @@ export class PaymentComponent implements OnInit {
       }else{
         this._bills.getUnpaidBill(this.customerId).subscribe(
           result => {
-            this.bills = result;
-            console.log(this.bills);
-            this.error = {};
-            el.classList.remove("error");
+            if(result.idle != undefined){
+              this.bills = result;
+              console.log(result);
+              this.error = {};
+              el.classList.remove("error"); 
+            }else{
+              this.error.message = "ID konsumen tidak terdaftar";
+              el.classList.add("error");
+            }
           }
         );
       this.customerId = null;
