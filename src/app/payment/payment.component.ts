@@ -32,6 +32,7 @@ export class PaymentComponent implements OnInit {
   }
 
   queryData(){
+    this.bills = {};
     let el = document.getElementById("custId");
     try {
       if(String.IsNullOrWhiteSpace(this.customerId)){
@@ -40,13 +41,17 @@ export class PaymentComponent implements OnInit {
         el.classList.add("error");
         throw({"message":"Costumer ID tidak boleh kosong"});
       }else{
-        this.modal = true;
-        this._bills.getBill(this.customerId, Bills.IDLE).subscribe(
+        this._bills.getUnpaidBill(this.customerId).subscribe(
           result => {
-            this.bills = result;
-            console.log(this.bills);
-            this.error = {};
-            el.classList.remove("error");
+            if(result.idle != undefined){
+              this.bills = result;
+              console.log(result);
+              this.error = {};
+              el.classList.remove("error"); 
+            }else{
+              this.error.message = "ID konsumen tidak terdaftar";
+              el.classList.add("error");
+            }
           }
         );
       this.customerId = null;
@@ -59,8 +64,8 @@ export class PaymentComponent implements OnInit {
 
   queueBills(){
     let idx = [];
-    for(let i = 0; i < this.bills.details.length; i++){
-      idx.push(this.bills.details[i].ID_TAGIHAN);
+    for(let i = 0; i < this.bills.idle.length; i++){
+      idx.push(this.bills.idle[i].ID_TAGIHAN);
     }
 
     let obj = {

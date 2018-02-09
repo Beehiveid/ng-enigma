@@ -18,7 +18,7 @@ import { String } from 'typescript-string-operations';
             style({ opacity: .5, transform: 'translateX(10px)', offset: .3}),
             style({ opacity: 1, transform: 'translateX(0)', offset: 1}),
           ]))]), { optional : true }),
-        query(':leave', stagger('50ms', [
+        query(':leave', stagger('0ms', [
           animate('.6s ease-in', keyframes([
             style({ opacity: 1, transform: 'translateX(0)', offset: 0}),
             style({ opacity: 0, transform: 'translateX(-20%)', offset: 1}),
@@ -32,7 +32,8 @@ export class DashboardComponent implements OnInit {
   userId: any;
   queuedBills: any;
   message: String;
-  error:any;
+  error: any;
+  lastId: any;
 
   constructor(private _bills : BillsService) { }
 
@@ -46,26 +47,32 @@ export class DashboardComponent implements OnInit {
     let el = document.getElementById("custId");
     try {
       if(String.IsNullOrWhiteSpace(this.userId)){
+        
         this.userId = null;
         this.error.message = "Masukkan ID konsumen";
         this.queuedBills = {};
         this.message = null;
         el.classList.add("error");
         throw("Customer ID tidak boleh kosong")
-      }
-
-      this.queuedBills = {};
-      let id = this.userId.trim();
-      this._bills.getBill(id, Bills.QUEUED)
-      .subscribe(result => {
-        this.queuedBills = result;
-
-        this.error = {};
-        el.classList.remove("error");
-        if(this.queuedBills.details == undefined){
-          this.message = "Tidak ada antrian untuk ID " + id;
+      }else{
+        if(this.userId === this.lastId){
+          throw("ID sama");
         }
-      });
+        this.queuedBills = {};
+        let id = this.userId.trim();
+        this._bills.getBill(id, Bills.QUEUED)
+        .subscribe(result => {
+          this.queuedBills = result;
+
+          this.error = {};
+          this.message = null;
+          el.classList.remove("error");
+          this.lastId = this.userId;
+          if(this.queuedBills.details == undefined){
+            this.message = "Tidak ada antrian untuk ID " + id;
+          }
+        });
+      }
     } catch (error) {
       console.log(error);
       

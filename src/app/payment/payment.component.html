@@ -24,26 +24,44 @@
   </div>
 
 <!-- The Modal -->
-<div class="modal" *ngIf="bills.details">
+<div class="modal" *ngIf="bills.queue || bills.idle">
   <!-- Modal content -->
   <div class="modal-content" >
     <span class="close" (click)="closeModal()">&times;</span>
     <ul>
       <h3>{{ bills.nama}} NCLI-{{bills.id}}</h3>
-      <h4>Detail</h4>
-      <li class="numberic" *ngFor="let data of bills.details; index as i;" [attr.data-index]="i">
+      <div class="details">
+        <div><h4>Idle</h4></div>
+        <div><h4 *ngIf="bills.queue.length">Queued</h4></div>
         <div>
-          Layanan {{ data.NAMA_LAYANAN }} {{ data.HARGA | currency:'IDR' }}
+          <li class="numberic" *ngFor="let data of bills.idle; index as i;" [attr.data-index]="i">
+            <div>
+              Layanan {{ data.NAMA_LAYANAN }} {{ data.HARGA | currency:'IDR' }}
+            </div>
+          </li>
         </div>
-      </li>
-      <div *ngIf="list">
-        Total tagihan <b>{{ bills.total | currency:'IDR' }}</b>
+        <div>
+          <div *ngIf="bills.queue.length">
+            <li class="numberic" *ngFor="let data of bills.queue; index as i;" [attr.data-index]="i">
+              <div>
+                Layanan {{ data.NAMA_LAYANAN }} {{ data.HARGA | currency:'IDR' }}
+              </div>
+            </li>
+          </div>
+        </div>
+        <div>Total <b>{{ bills.totalIdle | currency:'IDR' }}</b></div>
+        <div >
+          <span *ngIf="bills.queue.length">Total <b>{{ bills.totalQueue | currency:'IDR' }}</b></span>
+        </div>
       </div>
-      <div>
+      <div *ngIf="bills.idle.length">
         <button class="btn yes" (click)="queueBills()">Accept</button>
         <button class="btn no" (click)="closeModal()">Cancel</button>
       </div>
     </ul>
+    <div class="info" *ngIf="!bills.idle.length">
+      <h4>Semua tagihan sudah diantrikan. Silahkan bayar di loket</h4>
+    </div>
   </div>
 </div>
 

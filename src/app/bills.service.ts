@@ -13,6 +13,10 @@ export class BillsService {
     return this.http.get<any>("http://localhost:3000/bills");
   }
 
+  getUnpaidBill(id:any): Observable<any>{
+    return this.http.get<any>("http://localhost:3000/bills/"+id);
+  }
+
   getBill(id:any, stats: any): Observable<any>{
     return this.http.get<any>("http://localhost:3000/bills/"+id+"/"+stats);
   }

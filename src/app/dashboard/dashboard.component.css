@@ -190,3 +190,14 @@ label.error::before{
 button:focus{
     outline: none;
 }
+
+.message.alert{
+    display: block;
+    background: #fc9a93;
+    color:#8f0e05;
+    padding: .7em;
+    font-size: .8em;
+    font-weight: bold;
+    border: solid #8f0e05 1px;
+    border-radius: 3px;
+}

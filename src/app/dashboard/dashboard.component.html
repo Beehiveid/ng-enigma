@@ -5,7 +5,7 @@
         <label class="error" *ngIf="error.message" for="userid">{{ error.message }}</label>
     </div>
     <div>
-        <button class="btn" (click)="getQueuedBills()">Submit</button>
+        <button class="btn" (click)="getQueuedBills()">Submit</button> 111847432 | 1119293002
     </div>
     
   </div>
@@ -13,7 +13,7 @@
 </form>
 
 <div class="content">
-  <div class="info" *ngIf="queuedBills.details; else emptyblock" [@bills] = "queuedBills.details">
+  <div class="info" *ngIf="queuedBills.details" [@bills] = "queuedBills.details">
     <div class="header">Info Pelanggan</div>
     <div class="header">Detail Tagihan</div>
     <div class="header">Aksi</div>
@@ -41,9 +41,9 @@
         <button class="btn no" (click)="showModal(false)">Batal</button>
     </div>
   </div>
-  <ng-template #emptyblock>
-      <h4>{{ message }}</h4>
-  </ng-template>
+  <div class="message alert" *ngIf="message">
+    <h4>{{ message }}</h4>
+  </div>
 </div>
 
 <div class="modal" *ngIf="notification">
