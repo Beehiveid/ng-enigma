@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PaymentComponent } from './payment/payment.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { AuthGuardService } from './auth-guard.service';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -9,12 +11,17 @@ const routes: Routes = [
     component: PaymentComponent
   },
   {
+    path: "login",
+    component: LoginComponent
+  },
+  {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: '**',
-    redirectTo: ""
+    component: PaymentComponent
   }
 ];
 

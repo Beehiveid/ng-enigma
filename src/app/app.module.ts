@@ -15,6 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { String, StringBuilder } from "typescript-string-operations";
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { String, StringBuilder } from "typescript-string-operations";
     PaymentComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,
@@ -32,7 +36,7 @@ import { String, StringBuilder } from "typescript-string-operations";
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [BillsService],
+  providers: [BillsService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
