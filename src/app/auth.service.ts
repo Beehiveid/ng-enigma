@@ -11,8 +11,12 @@ export class AuthService {
 
   constructor() { }
 
-  login(): Observable<boolean>{
-    return Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
+  login(username: string, password: string): Observable<boolean>{
+    return Observable.of(true).delay(1000).do(val => {
+      if ((username == "admin") && (password == "123456")) {
+        this.isLoggedIn = true;
+      }
+    });
   }
 
   logout(): void{

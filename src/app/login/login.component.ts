@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }      from '@angular/router';
 import { AuthService } from '../auth.service';
+import { log } from 'util';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  employeeId: string;
+  passKey: string;
   message: string;
 
   constructor(public authService: AuthService, public router: Router) {
@@ -23,14 +26,17 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.message = 'Trying to log in ...';
-
-    this.authService.login().subscribe(
+    console.log(this.employeeId);
+    console.log(this.passKey);
+    
+    this.authService.login(this.employeeId, this.passKey).subscribe(
       () => {
-        this.setMessage();
+        
         if (this.authService.isLoggedIn) {
-          let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/login';
+          let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/dashboard';
           this.router.navigate([redirect]);
-          
+        }else{
+          this.message = "Username and password not match";
         }
       }
     );
