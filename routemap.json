@@ -1,0 +1,10 @@
+[{
+    "/":"payment",
+    "/home":{
+        "/":"home",
+        "/dashboard":"dashboard",
+        "/report":"report",
+        "/user":"user",
+        "/konsumen":"konsumen"
+    }
+}]
