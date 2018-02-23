@@ -2,7 +2,7 @@
     "/":"payment",
     "/home":{
         "/":"home",
-        "/dashboard":"dashboard",
+        "/dashboard":"dashboard ... counter",
         "/report":"report",
         "/user":"user",
         "/konsumen":"konsumen"
