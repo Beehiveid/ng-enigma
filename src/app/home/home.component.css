@@ -5,3 +5,39 @@
     width: 100vw;
     height: 100vh;
 }
+
+.container{
+    display: grid;
+    grid-template-columns: 7.89% auto;
+}
+
+.menu{
+    background: black;
+    color: white;
+    font-size: .7em;
+    cursor: pointer;
+    height: 100vh;
+}
+
+.menu ul{
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li{
+    text-align: center;
+    padding: .5em 0;
+}
+
+.menu ul li:hover{
+    /* background: brown; */
+    border-right: brown;
+    border-right-style: solid;
+    border-right-width: 3px;
+    border-left: hsla(0, 59%, 41%, .0);
+    border-left-style: solid;
+    border-left-width: 3px;
+    background: hsla(0, 59%, 41%, .2);
+    color: brown;
+    
+}
