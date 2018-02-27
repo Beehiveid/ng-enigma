@@ -15,7 +15,7 @@
     background: black;
     color: white;
     font-size: .7em;
-    cursor: pointer;
+    
     height: 100vh;
 }
 
@@ -26,18 +26,24 @@
 
 .menu ul li{
     text-align: center;
-    padding: .5em 0;
+    padding: 2vh 0;
+    cursor: pointer;
+    /* margin: 5vh 0; */
 }
 
 .menu ul li:hover{
     /* background: brown; */
     border-right: brown;
     border-right-style: solid;
-    border-right-width: 3px;
+    border-right-width: .3vw;
     border-left: hsla(0, 59%, 41%, .0);
     border-left-style: solid;
-    border-left-width: 3px;
+    border-left-width: .3vw;
     background: hsla(0, 59%, 41%, .2);
-    color: brown;
     
+}
+
+li i.icon{
+    display: block;
+    font-size: 2.5em;
 }
