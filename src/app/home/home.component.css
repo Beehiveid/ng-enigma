@@ -12,7 +12,7 @@
 }
 
 .menu{
-    background: black;
+    background: #151723;
     color: white;
     font-size: .7em;
     
@@ -26,24 +26,50 @@
 
 .menu ul li{
     text-align: center;
-    padding: 2vh 0;
+    padding: 2.5vh 0;
     cursor: pointer;
     /* margin: 5vh 0; */
 }
 
 .menu ul li:hover{
     /* background: brown; */
-    border-right: brown;
+    border-right: #DA2421;
     border-right-style: solid;
     border-right-width: .3vw;
     border-left: hsla(0, 59%, 41%, .0);
     border-left-style: solid;
     border-left-width: .3vw;
     background: hsla(0, 59%, 41%, .2);
-    
 }
 
 li i.icon{
     display: block;
-    font-size: 2.5em;
+    font-size: 3em;
 }
+
+li.active{
+    color:#DA2421;
+}
+
+a,a:hover,a:active,a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+a.link{
+    color: #0099FF;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 20% 70% auto;
+    padding: 1.5em;
+}
+
+.header > .right{
+    text-align: right;
+}
+
+
