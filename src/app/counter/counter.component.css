@@ -141,6 +141,12 @@ div.container > div.box{
 .grid-2555{
     display: grid;
     grid-template-columns: 25% 55% auto;
+    margin-bottom: 1em;
+}
+
+.grid-255520{
+    display: grid;
+    grid-template-columns: 25% 55% 20%;
 }
 
 .grid-6040{
@@ -255,6 +261,7 @@ div.container > div.box{
 }
 .input{
     display: block;
+    height: 72px; 
 }
 
 .input > input.txt{
@@ -299,5 +306,67 @@ label.error::before{
     border-bottom:none;
     
     border-radius: 3px 3px 0px 0px;
+}
+
+.title{
+    background: white;
+    padding: .5em;
+    color: hsl(0, 0%, 65%);
+    border: hsl(0, 0%, 80%);
+    border-style: solid;
+    border-width: 1px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    /* padding: .5em; */
+    font-size: 1.25em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.title.left{
+    border-radius: 5px 0 0 0;
+    border-right: none;
+}
+
+.title.middle{
+    border-radius: 0 0 0 0;
+    border-right: none;
+    border-left: none;
+}
+
+.title.right{
+    border-radius: 0 5px 0 0;
+    border-left: none;
+}
+
+.data{
+    background: white;
+    padding: .5em;
+    color: hsl(0, 0%, 65%);
+    border: hsl(0, 0%, 80%);
+    border-style: solid;
+    border-width: 1px;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-top: none;
+    min-height: 24vmax;
+    max-height: 24vmax;
+}
+
+.data.left{
+    border-radius: 0 0 0 5px;
+    border-right: none;
+}
+
+.data.middle{
+    border-radius: 0 0 0 0;
+    border-right: none;
+    border-left: none;
+}
+
+.data.right{
+    border-radius: 0 0 5px 0;
+    border-left: none;
 }
 
