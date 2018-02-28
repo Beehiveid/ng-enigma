@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { String, StringBuilder } from "typescript-string-operations";
 import { HomeComponent } from './home/home.component';
+import { CounterComponent } from './counter/counter.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    CounterComponent
   ],
   imports: [
     HttpClientModule,
