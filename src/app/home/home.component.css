@@ -179,7 +179,6 @@ div.container > div.box{
     top: 0;
     left: 0;
     width: 100%;
-    
     padding: .5em .5em 2em .5em;
     box-sizing: border-box;
 }
@@ -187,6 +186,16 @@ div.container > div.box{
 .news-content > .data{
     padding: .5em;
     color: #6d6a6a;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.news-content > .data::after{
+    margin-top: 1em;
+    display: block;
+    content: "Read more...";
+    text-align: end;
+    color: #0099FF;
     font-weight: 500;
 }
 
