@@ -47,7 +47,7 @@ li i.icon{
     font-size: 3em;
 }
 
-li.active{
+li.active a{
     color:#DA2421;
 }
 

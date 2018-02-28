@@ -47,7 +47,7 @@ li i.icon{
     font-size: 3em;
 }
 
-li.active{
+li.active a{
     color:#DA2421;
 }
 
@@ -217,17 +217,23 @@ div.container > div.box{
     margin: -15% 0 0 -25%;
 }
 
-.btn.login{
+.btn{
     text-decoration: none;
     padding: .5em 1em;
     color: white;
-    background: #0099FF;
     border: none;
     border-radius: 2px;
     position: absolute;
     bottom: 2.5vmax;
     left: 1.7vmax;
     cursor: pointer;
+}
+.btn.login{
+    background: #0099FF; 
+}
+
+.btn.logout{
+    background: #DB241B; 
 }
 
 
