@@ -149,6 +149,11 @@ div.container > div.box{
     grid-template-columns: 25% 55% 20%;
 }
 
+.grid-333333{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
 .grid-6040{
     display: grid;
     grid-template-columns: 60% 40% auto;
@@ -237,27 +242,42 @@ div.container > div.box{
     border: none;
     border-radius: 2px;
     cursor: pointer;
+    padding: .5em 1em;
 }
 
 .btn.side{
-    padding: .5em 1em;
     position: absolute;
     bottom: 2.5vmax;
     left: 1.7vmax;
 }
+
 .btn.blue{
     background: #0099FF; 
+}
+
+.btn.green{
+    background: #019835; 
 }
 
 .btn.red{
     background: #DB241B; 
 }
 
-.btn.submit{
+.btn.find{
     border-style: solid;
     border-width: 2px;
     border-color: #0099FF;
     padding: 1em;
+}
+
+.btn.submit{
+    border: none;
+    padding: 1em;
+}
+
+.btn.wide{
+    padding-right: 2em;
+    padding-left: 2em;
 }
 .input{
     display: block;
@@ -308,7 +328,7 @@ label.error::before{
     border-radius: 3px 3px 0px 0px;
 }
 
-.title{
+.result.title{
     background: white;
     padding: .5em;
     color: hsl(0, 0%, 65%);
@@ -370,3 +390,62 @@ label.error::before{
     border-left: none;
 }
 
+.customer{
+    font-weight: bold;
+}
+
+.customer .name{
+    font-size: 1.5em;
+}
+
+.customer .id{
+    font-size: .6em;
+}
+
+.customer .id::before{
+    content: "NCLI-";
+    font-weight: 300;
+}
+
+.card{
+    margin: .5em .5em 0 0;
+    cursor: pointer;
+    color: white;
+}
+
+.card .title{
+    font-size: .8em;
+    text-align: left;
+    padding: .5em 1em .7em;;
+    background: #006600;
+    font-weight: 500;
+}
+
+.card .price{
+    font-size: 1.3em;
+    text-align: right;
+    background: #019934; 
+    padding: .5em 1em;
+    font-weight: 300;
+    
+}
+
+.total{
+    font-weight: 600;
+}
+
+.total::before{
+    content: 'Total:';
+    font-weight: 100;
+}
+
+.message.alert{
+    display: block;
+    background: #fc9a93;
+    color:#8f0e05;
+    padding: .7em;
+    font-size: .8em;
+    font-weight: bold;
+    border: solid #8f0e05 1px;
+    border-radius: 3px;
+}
