@@ -165,18 +165,29 @@ div.container > div.box{
 }
 
 .news-content > .title{
-    padding: .5em;
+    /* padding: .5em; */
     margin: auto;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .news-content > .title::before{
     content: attr(data-title);
-    z-index: 1;
+    color: white;
     background: hsla(0, 0%, 0%,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    padding: .5em .5em 2em .5em;
+    box-sizing: border-box;
 }
 
 .news-content > .data{
     padding: .5em;
+    color: #6d6a6a;
+    font-weight: 500;
 }
 
 .big-number{
@@ -195,6 +206,19 @@ div.container > div.box{
     height: 100%;
     width: 50%;
     margin: -15% 0 0 -25%;
+}
+
+.btn.login{
+    text-decoration: none;
+    padding: .5em 1em;
+    color: white;
+    background: #0099FF;
+    border: none;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 2.5vmax;
+    left: 1.7vmax;
+    cursor: pointer;
 }
 
 
