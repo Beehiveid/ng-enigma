@@ -60,6 +60,7 @@ a.link{
     color: #0099FF;
     font-size: .9em;
     font-weight: bold;
+    margin-right: 1%;
 }
 
 .header{
@@ -131,8 +132,6 @@ div.container > div.box{
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: .5em;
-    
-    
 }
 
 .grid-6040{
@@ -140,9 +139,62 @@ div.container > div.box{
     grid-template-columns: 60% 40% auto;
 }
 
+.grid-7025{
+    display: grid;
+    grid-template-columns: 70% 25% auto;
+}
+
+.grid-4060{
+    display: grid;
+    grid-template-columns: 40% 60% auto;
+}
+
 .news{
     overflow-y: auto;
-    height: 30vmax;
+    height: 29.4vmax;
+}
+
+.news-content{
+    border-style: solid;
+    border-width: 1px;
+    border-color: hsl(0, 0%, 80%);
+    margin: .5em 0;
+    max-height: 15vmax;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.news-content > .title{
+    padding: .5em;
+    margin: auto;
+}
+
+.news-content > .title::before{
+    content: attr(data-title);
+    z-index: 1;
+    background: hsla(0, 0%, 0%,.5);
+}
+
+.news-content > .data{
+    padding: .5em;
+}
+
+.big-number{
+    font-weight: bold;
+    height: 12vmax;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.big-number > span{
+    text-align: center;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
 }
 
 
