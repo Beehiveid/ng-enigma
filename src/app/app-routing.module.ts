@@ -4,6 +4,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
+import { AuthGuardService } from './auth-guard.service';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -11,8 +13,13 @@ const routes: Routes = [
     component: PaymentComponent
   },
   {
+    path: "login",
+    component: LoginComponent
+  },
+  {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: "counter",
@@ -24,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: ""
+    component: PaymentComponent
   }
 ];
 
