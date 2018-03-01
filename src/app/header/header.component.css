@@ -1,0 +1,9 @@
+.header{
+    display: grid;
+    grid-template-columns: 20% 75% auto;
+    padding: 0.5em 0;
+}
+
+.header > .right{
+    text-align: right;
+}

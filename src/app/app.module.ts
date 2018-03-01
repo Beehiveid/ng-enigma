@@ -6,12 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { PaymentComponent } from './payment/payment.component';
+import { PaymentComponent } from './client/payment/payment.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { BillsService } from "./bills.service";
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { ClientHeaderComponent } from './client/header/header.component';
+import { ClientFooterComponent } from './client/footer/footer.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { String, StringBuilder } from "typescript-string-operations";
@@ -21,6 +21,7 @@ import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -28,12 +29,13 @@ import { MenuComponent } from './menu/menu.component';
     AppComponent,
     PaymentComponent,
     DashboardComponent,
-    HeaderComponent,
-    FooterComponent,
+    ClientHeaderComponent,
+    ClientFooterComponent,
     HomeComponent,
     CounterComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    HeaderComponent
   ],
   imports: [
     HttpClientModule,

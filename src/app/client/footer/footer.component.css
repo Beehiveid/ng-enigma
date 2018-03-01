@@ -1,7 +1,7 @@
 div.footer{
     box-sizing: border-box;
     background: #fff;
-    background-image: url('../../assets/img/footer.png');
+    background-image: url('../../../assets/img/footer.png');
     background-size: 50% 100%;
     display: block;
     width: 100%;
@@ -15,7 +15,7 @@ div.footer{
 div.overlay{
     box-sizing: border-box;
     background-color: none;
-    background-image: url('../../assets/img/my-indihome.png');
+    background-image: url('../../../assets/img/my-indihome.png');
     background-size: 50%;
     background-repeat: no-repeat;
     display: block;

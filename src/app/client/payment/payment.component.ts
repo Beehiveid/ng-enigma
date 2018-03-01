@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BillsService } from "../bills.service";
-import { Bills } from '../bills.enum';
+import { BillsService } from "../../bills.service";
+import { Bills } from '../../bills.enum';
 import { isNumber } from 'util';
 import { String } from 'typescript-string-operations';
 
