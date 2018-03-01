@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit() {
+    console.log(this.router.url);
+    
   }
 
   setMessage(){
@@ -33,7 +35,7 @@ export class LoginComponent implements OnInit {
       () => {
         
         if (this.authService.isLoggedIn) {
-          let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/dashboard';
+          let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/';
           this.router.navigate([redirect]);
         }else{
           this.message = "Username and password not match";

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router }      from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,12 +10,21 @@ import { AuthService } from '../auth.service';
 export class MenuComponent implements OnInit {
   isLoggedIn: boolean;
   username: string;
+  activeMenu: string;
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
     this.isLoggedIn = this.authService.isLoggedIn;
     this.username = this.authService.username;
+    this.setActiveMenu(this.router.url);
   }
+
+  setActiveMenu(url: string){
+    console.log(url);
+    this.activeMenu = url;
+  }
+
+
 
 }
