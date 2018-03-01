@@ -17,6 +17,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { String, StringBuilder } from "typescript-string-operations";
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -27,7 +30,8 @@ import { CounterComponent } from './counter/counter.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CounterComponent
+    CounterComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,
@@ -36,7 +40,7 @@ import { CounterComponent } from './counter/counter.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [BillsService],
+  providers: [BillsService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
