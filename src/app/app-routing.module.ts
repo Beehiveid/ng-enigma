@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "client",
     component: PaymentComponent
   },
   {
@@ -23,10 +23,11 @@ const routes: Routes = [
   },
   {
     path: "counter",
-    component: CounterComponent
+    component: CounterComponent,
+    canActivate: [AuthGuardService]
   },
   {
-    path: "home",
+    path: "",
     component: HomeComponent
   },
   {

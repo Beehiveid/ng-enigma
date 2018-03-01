@@ -1,0 +1,126 @@
+.menu{
+    background: #151723;
+    color: white;
+    font-size: .7em;
+    height: 100vh;
+}
+
+.menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li{
+    text-align: center;
+    padding: 1.5vmax 0;
+    cursor: pointer;
+    /* margin: 5vh 0; */
+}
+
+.menu ul li:hover{
+    /* background: brown; */
+    border-right: #DA2421;
+    border-right-style: solid;
+    border-right-width: .3vw;
+    border-left: hsla(0, 59%, 41%, .0);
+    border-left-style: solid;
+    border-left-width: .3vw;
+    background: hsla(0, 59%, 41%, .2);
+}
+
+li i.icon{
+    display: block;
+    font-size: 3em;
+}
+
+li.active a{
+    color:#DA2421;
+}
+
+.btn{
+    text-decoration: none;
+    padding: .5em 1em;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 2.5vmax;
+    left: 1.7vmax;
+    cursor: pointer;
+}
+.btn.login{
+    background: #0099FF; 
+}
+
+.btn.logout{
+    background: #DB241B; 
+}
+
+.avatar > img{
+    border-radius: 100px;
+    width: 60%;
+    margin: 20%;
+    margin-bottom: 5px;
+}
+
+.avatar > .name{
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.avatar > .name::before{
+    content: "Hi, ";
+    font-weight: 300;
+}
+
+.avatar > .name::after{
+    content: "!";
+    font-weight: bold;
+}
+
+.btn{
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: .5em 1em;
+}
+
+.btn.side{
+    position: absolute;
+    bottom: 2.5vmax;
+    left: 1.7vmax;
+}
+
+.btn.blue{
+    background: #0099FF; 
+}
+
+.btn.green{
+    background: #019835; 
+}
+
+.btn.red{
+    background: #DB241B; 
+}
+
+.btn.find{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0099FF;
+    padding: 1em;
+}
+
+.btn.submit{
+    border: none;
+    padding: 1em;
+}
+
+.btn.wide{
+    padding-right: 2em;
+    padding-left: 2em;
+}
