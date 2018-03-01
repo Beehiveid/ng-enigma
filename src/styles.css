@@ -21,3 +21,15 @@ h2, h4.center{
     text-align: center;
 }
 
+a,a:hover,a:active,a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+a.link{
+    color: #0099FF;
+    font-size: .9em;
+    font-weight: bold;
+    margin-right: 1%;
+}
+

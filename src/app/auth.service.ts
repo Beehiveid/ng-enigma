@@ -8,18 +8,21 @@ import 'rxjs/add/operator/delay';
 export class AuthService {
   isLoggedIn = false;
   redirectUrl: string;
+  username: string;
 
   constructor() { }
 
   login(username: string, password: string): Observable<boolean>{
     return Observable.of(true).delay(1000).do(val => {
       if ((username == "admin") && (password == "123456")) {
+        this.username = "Cassie";
         this.isLoggedIn = true;
       }
     });
   }
 
   logout(): void{
+    this.username = null;
     this.isLoggedIn = false;
   }
 

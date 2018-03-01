@@ -20,6 +20,7 @@ import { CounterComponent } from './counter/counter.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     HomeComponent,
     CounterComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent
   ],
   imports: [
     HttpClientModule,
