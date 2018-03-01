@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.isLoggedIn = this.authService.isLoggedIn;
-    this.username = this.authService.loggedUser.username;
+    this.username = this.authService.loggedUser.fullname?this.authService.loggedUser.fullname: null;
     this.setActiveMenu(this.router.url);
   }
 

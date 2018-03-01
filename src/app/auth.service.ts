@@ -12,7 +12,9 @@ export class AuthService {
   username: string;
   loggedUser: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.loggedUser = {};
+  }
 
   login(username: string, password: string): Observable<any>{
     let obj = {
