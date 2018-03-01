@@ -11,46 +11,10 @@
     grid-template-columns: 7.89% auto;
 }
 
-.header{
-    display: grid;
-    grid-template-columns: 20% 75% auto;
-    padding: 0.5em 0;
-}
 
-.header > .right{
-    text-align: right;
-}
 
 div.container > div.box{
     padding: 1em;
-}
-
-.breadcrumb{
-    color: #0099FF;
-    text-transform: capitalize;
-    font-size: .8em;
-    margin: 0 0 1em;;
-}
-
-.breadcrumb::before{
-    content: "You are at:"
-}
-
-.breadcrumb > span:not(:last-child){
-    cursor: pointer;
-    color: darkgray;
-}
-
-.breadcrumb > span:not(:last-child)::after{
-    content: " /";
-    font-size: 1em;
-    font-weight: 600;
-    color: #0099FF;
-}
-
-.breadcrumb > span:last-child{
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .frame{

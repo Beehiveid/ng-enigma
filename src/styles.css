@@ -33,3 +33,7 @@ a.link{
     margin-right: 1%;
 }
 
+a.link.alert{
+    color: #D7251B;
+}
+

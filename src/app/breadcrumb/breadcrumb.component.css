@@ -1,0 +1,30 @@
+.breadcrumb{
+    color: #0099FF;
+    font-size: .8em;
+    margin: 0 0 1em;;
+}
+
+.breadcrumb > span{
+    text-transform: uppercase;
+}
+
+.breadcrumb::before{
+    content: "You are here:";
+}
+
+.breadcrumb > span:not(:last-child){
+    cursor: pointer;
+    color: darkgray;
+}
+
+.breadcrumb > span:not(:last-child)::after{
+    content: " / ";
+    font-size: 1em;
+    font-weight: 600;
+    color: #0099FF;
+}
+
+.breadcrumb > span:last-child{
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.container{
+    padding-top: 4em;
+    display: grid;
+    grid-template-columns: 20% 60% 20% auto;
+    margin-bottom: 3em;
+}
+
+.right{
+    float: right;
+}
+
+.shadow{
+    filter: drop-shadow(1px 1px 0 white)
+    drop-shadow(1px -1px 0 white)
+    drop-shadow(-1px 1px 0 white)
+    drop-shadow(-1px -1px 0 white);
+}

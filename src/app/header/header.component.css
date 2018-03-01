@@ -1,17 +1,9 @@
-.container{
-    padding-top: 4em;
+.header{
     display: grid;
-    grid-template-columns: 20% 60% 20% auto;
-    margin-bottom: 3em;
+    grid-template-columns: 20% 75% auto;
+    padding: 0.5em 0;
 }
 
-.right{
-    float: right;
-}
-
-.shadow{
-    filter: drop-shadow(1px 1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px 1px 0 white)
-    drop-shadow(-1px -1px 0 white);
+.header > .right{
+    text-align: right;
 }
