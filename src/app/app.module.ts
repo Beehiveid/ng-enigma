@@ -22,6 +22,7 @@ import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { HeaderComponent } from './header/header.component';
     CounterComponent,
     LoginComponent,
     MenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    BreadcrumbComponent
   ],
   imports: [
     HttpClientModule,
