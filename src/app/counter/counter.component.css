@@ -450,26 +450,4 @@ label.error::before{
     border-radius: 3px;
 }
 
-.avatar > img{
-    border-radius: 100px;
-    width: 50%;
-    margin: 25%;
-    margin-bottom: 5px;
-}
 
-.avatar > .name{
-    color: white;
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-}
-
-.avatar > .name::before{
-    content: "Hi, ";
-    font-weight: 300;
-}
-
-.avatar > .name::after{
-    content: "!";
-    font-weight: bold;
-}
