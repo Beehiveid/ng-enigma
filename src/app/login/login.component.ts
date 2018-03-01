@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }      from '@angular/router';
 import { AuthService } from '../auth.service';
-import { log } from 'util';
 
 @Component({
   selector: 'app-login',
@@ -32,13 +31,16 @@ export class LoginComponent implements OnInit {
     console.log(this.passKey);
     
     this.authService.login(this.employeeId, this.passKey).subscribe(
-      () => {
+      result => {
+        console.log(result);
+        this.authService.loggedUser = result;
+        this.authService.isLoggedIn = result.login;
         
         if (this.authService.isLoggedIn) {
           let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/';
           this.router.navigate([redirect]);
         }else{
-          this.message = "Username and password not match";
+          this.message = result.message;
         }
       }
     );
