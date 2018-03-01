@@ -1,0 +1,78 @@
+<div class="content">
+    <div class="container">
+    <div class="menu">
+      <ul>
+        <li><a routerLink="/home"><i class="fa fa-home icon"></i>Home</a></li>
+        <li class="active"><a routerLink="/counter"><i class="fa fa-support icon"></i>Counter</a></li>
+        <li><a routerLink="#"><i class="fa fa-user-circle-o icon"></i>Employees</a></li>
+        <li><a routerLink="#"><i class="fa fa-address-book-o icon"></i>Customers</a></li>
+        <li><a routerLink="#"><i class="fa fa-dashboard icon"></i>Dashboard</a></li>
+      </ul>
+      <div class="avatar">
+        <img src="../assets/img/user/joey.jpg" data-user="Joey">
+        <div class="name">Joey</div>
+      </div>
+      <button class="btn red side">Logout</button>
+    </div>
+    <div class="box">
+      <div class="header">
+        <div><img src="../assets/img/logo_telkom.png" width="60%"></div>
+        <div class="right">
+          <a class="link alert" href="/login">Logout</a>
+        </div>
+      </div>
+      <div class="breadcrumb">
+        <span>Home</span>
+        <span>Counter</span>
+      </div>
+      <div>
+        <form>
+          <div class="grid-2555">
+            <div class="input">
+                <input type="text" class="txt" id="custId" name="user" placeholder="User ID" [(ngModel)]="userId">
+                <label class="error" *ngIf="error.message" for="userid">{{ error.message }}</label>
+            </div>
+            <div>
+                <button class="btn blue wide find" (click)="getQueuedBills()">Find</button>
+            </div>
+            
+          </div>
+          <div class="grid-255520" *ngIf="queuedBills.details" [@bills] = "queuedBills.details">
+            <div class="result title left">Customer Info</div>
+            <div class="result title middle">Bills Detail</div>
+            <div class="result title right">Action</div>
+            <div class="data left">
+              <div class="customer">
+                <div class="name">{{ queuedBills.nama }}</div>
+                <div class="id">{{ queuedBills.id }}</div>
+              </div>
+            </div>
+            <div class="data middle">
+              <div class="total">
+                {{ queuedBills.total | currency:'IDR' }}
+              </div>
+              
+              <div class="grid-333333">
+                <div class="card" *ngFor="let bill of queuedBills.details; let i = index;">
+                  <div class="title">
+                    {{ bill.NAMA_LAYANAN }}
+                  </div>
+                  <div class="price">
+                    {{ bill.HARGA | currency:'IDR' }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="data right">
+              <button class="btn green wide submit" (click)="showModal(true)">Submit</button>
+              <button class="btn red wide submit" (click)="showModal(false)">Cancel</button>
+            </div>
+          </div>
+          <div class="message alert" *ngIf="message">
+              <h4>{{ message }}</h4>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
