@@ -34,10 +34,11 @@
                   <input type="checkbox"> Remember me
                 </div>
               </form>
-              <button class="btn blue fluid" (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
+              <button class="btn blue fluid" (click)="login()">Login</button>
               <div class="help">
                 Don't have an <span class="link">account?</span> / Forget <span class="link">password?</span>
               </div>
+              <p *ngIf="message">{{ message }}</p>
         </div>
     </div>
   </div>

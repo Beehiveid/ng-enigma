@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }      from '@angular/router';
 import { AuthService } from '../auth.service';
+import * as Cookies from 'es-cookie';
 
 @Component({
   selector: 'app-login',
@@ -13,16 +14,12 @@ export class LoginComponent implements OnInit {
   message: string;
 
   constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
+    
    }
 
   ngOnInit() {
     console.log(this.router.url);
     
-  }
-
-  setMessage(){
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in':'out');
   }
 
   login(){
@@ -33,7 +30,13 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.employeeId, this.passKey).subscribe(
       result => {
         console.log(result);
-        this.authService.loggedUser = result;
+        Cookies.set("token", result.token);
+        
+        this.authService.loggedUser = {
+          fullname : result.fullname,
+          department : result.department,
+          access : result.access
+        };
         this.authService.isLoggedIn = result.login;
         
         if (this.authService.isLoggedIn) {
@@ -48,6 +51,5 @@ export class LoginComponent implements OnInit {
 
   logout(){
     this.authService.logout();
-    this.setMessage();
   }
 }

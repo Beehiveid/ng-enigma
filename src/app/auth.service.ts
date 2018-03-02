@@ -4,6 +4,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import * as Cookies from 'es-cookie';
 
 @Injectable()
 export class AuthService {
@@ -21,7 +22,15 @@ export class AuthService {
       "username": username,
 	    "password": password
     }
-    return this.http.post<any>("http://localhost:3000/users/login",obj);
+    return this.http.post<any>("http://localhost:3000/users/auth",obj);
+  }
+
+  verify(token: string):Observable<any>{
+    let obj = {
+      "token": Cookies.get('token')
+    }
+
+    return this.http.post<boolean>("http://localhost:3000/users/verify",obj);
   }
 
   logout(): void{
