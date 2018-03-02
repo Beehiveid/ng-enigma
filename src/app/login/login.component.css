@@ -5,12 +5,29 @@
     width: 100vw;
     height: 100vh;
 }
+ .banner{
+    position: relative;
+    height: 100vh;
+    background: url(http://localhost:4200/assets/img/banners.jpg);
+    background-size: cover;
+    box-shadow:10px 10px 20px 5px rgba(161, 160, 160, 0.7);
+ }
 
-.banner > img{
-    display: block;
-    width: 100%;
-    filter: grayscale(100%);
-}
+ .gradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: hsla(0, 100%, 26%,.3);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(145deg,rgba(190, 3, 3, 0.9), rgba(63, 6, 6, 0.9));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(145deg,rgba(190, 3, 3, 0.9), rgba(63, 6, 6, 0.9)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #EEE;
+    padding: 10px;
+ }
+
+
 .grid-4060{
     display: grid;
     grid-template-columns: 35% 65%;
