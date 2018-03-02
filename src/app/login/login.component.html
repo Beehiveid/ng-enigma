@@ -18,21 +18,27 @@
         </div>
       </div>
     </div>
-    <div>
-      <form>
+    <div class="form">
+        <img src="../assets/img/logo_telkom.png" class="center">
         <div>
-            <input id="nik" name="nik" [(ngModel)]="employeeId" type="text">  
+            <form>
+                <div class="input">
+                  <label>Username</label>
+                  <input id="nik" name="nik" [(ngModel)]="employeeId" type="text">  
+                </div>
+                <div class="input">
+                  <label>Password</label>
+                  <input id="passkey" name="passkey" [(ngModel)]="passKey" type="password">
+                </div>
+                <div class="input">
+                  <input type="checkbox"> Remember me
+                </div>
+              </form>
+              <button class="btn blue fluid" (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
+              <div class="help">
+                Don't have an <span class="link">account?</span> / Forget <span class="link">password?</span>
+              </div>
         </div>
-        <div>
-            <input id="passkey" name="passkey" [(ngModel)]="passKey" type="password">
-        </div>
-      </form>
-      
-      <p>
-        <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-        <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-      </p>
-      <p>{{message}}</p>
     </div>
   </div>
 </div>
