@@ -21,8 +21,8 @@
     bottom: 0;
     
     background: hsla(0, 100%, 26%,.3);  /* fallback for old browsers */
-    background: -webkit-linear-gradient(145deg,rgba(190, 3, 3, 0.9), rgba(63, 6, 6, 0.9));  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(145deg,rgba(190, 3, 3, 0.9), rgba(63, 6, 6, 0.9)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(145deg,rgba(190, 3, 3, 0.8), rgba(63, 6, 6, 0.9));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(145deg,rgba(190, 3, 3, 0.8), rgba(63, 6, 6, 0.9)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #EEE;
     padding: 10px;
  }
