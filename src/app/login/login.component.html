@@ -1,14 +1,24 @@
-<form>
-  <div>
-      <input id="nik" name="nik" [(ngModel)]="employeeId" type="text">  
+<div class="content">
+  <div class="grid-4060">
+    <div class="banner">
+      <img src="../assets/img/banners.jpg">
+    </div>
+    <div>
+      <form>
+        <div>
+            <input id="nik" name="nik" [(ngModel)]="employeeId" type="text">  
+        </div>
+        <div>
+            <input id="passkey" name="passkey" [(ngModel)]="passKey" type="password">
+        </div>
+      </form>
+      
+      <p>
+        <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
+        <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+      </p>
+      <p>{{message}}</p>
+    </div>
   </div>
-  <div>
-      <input id="passkey" name="passkey" [(ngModel)]="passKey" type="password">
-  </div>
-</form>
+</div>
 
-<p>
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
-<p>{{message}}</p>
