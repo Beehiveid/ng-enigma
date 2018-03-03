@@ -12,9 +12,11 @@ export class AuthService {
   redirectUrl: string;
   username: string;
   loggedUser: any;
+  message: string;
 
   constructor(private http: HttpClient) { 
     this.loggedUser = {};
+    this.message = null;
   }
 
   login(username: string, password: string): Observable<any>{
@@ -22,7 +24,20 @@ export class AuthService {
       "username": username,
 	    "password": password
     }
-    return this.http.post<any>("http://localhost:3000/users/auth",obj);
+    return this.http.post<any>("http://localhost:3000/users/auth",obj).do(
+      result => {
+        Cookies.set("token", result.token);
+        
+        this.loggedUser = {
+          fullname : result.fullname,
+          department : result.department,
+          access : result.access
+        };
+        this.isLoggedIn = result.login;
+        this.message = result.message;
+        
+      }
+    );
   }
 
   verify(token: string):Observable<any>{
@@ -30,7 +45,7 @@ export class AuthService {
       "token": Cookies.get('token')
     }
 
-    return this.http.post<boolean>("http://localhost:3000/users/verify",obj);
+    return this.http.post<any>("http://localhost:3000/users/verify",obj);
   }
 
   logout(): void{
