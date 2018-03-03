@@ -40,12 +40,22 @@ export class AuthService {
     );
   }
 
-  verify(token: string):Observable<any>{
+  verify():Observable<any>{
     let obj = {
       "token": Cookies.get('token')
     }
 
-    return this.http.post<any>("http://localhost:3000/users/verify",obj);
+    return this.http.post<any>("http://localhost:3000/users/verify",obj).do(
+      result => {
+        this.loggedUser = {
+          fullname : result.fullname,
+          department : result.department,
+          access : result.access
+        };
+        this.isLoggedIn = result.login;
+        this.message = result.message;
+      }
+    );
   }
 
   logout(): void{
