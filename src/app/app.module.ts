@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { InterceptorService } from "./interceptor.service";
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [BillsService, AuthGuardService, AuthService],
+  providers: [BillsService, AuthGuardService, AuthService, InterceptorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
