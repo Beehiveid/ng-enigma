@@ -12,17 +12,26 @@ export class MenuComponent implements OnInit {
   username: string;
   activeMenu: string;
 
-  constructor(public authService: AuthService, public router: Router) { }
-
-  ngOnInit() {
-    this.isLoggedIn = this.authService.isLoggedIn;
-    this.username = this.authService.loggedUser.fullname?this.authService.loggedUser.fullname: null;
-    this.setActiveMenu(this.router.url);
+  constructor(public authService: AuthService, public router: Router) { 
+    
   }
 
-  setActiveMenu(url: string){
-    console.log(url);
-    this.activeMenu = url;
+  ngOnInit() {
+    this.verify();
+    this.setActiveMenu();
+  }
+
+  setActiveMenu(){
+    this.activeMenu = this.router.url;
+  }
+
+  verify(){
+    this.authService.verify().subscribe(
+      result => {
+        this.isLoggedIn = this.authService.isLoggedIn;
+        this.username = this.authService.loggedUser.fullname?this.authService.loggedUser.fullname: null;
+      }
+    );
   }
 
 
