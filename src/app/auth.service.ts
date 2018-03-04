@@ -26,7 +26,9 @@ export class AuthService {
     }
     return this.http.post<any>("http://localhost:3000/users/auth",obj).do(
       result => {
-        Cookies.set("token", result.token);
+        Cookies.set("token", result.token, {
+           expires: result.expIn
+        });
         
         this.loggedUser = {
           fullname : result.fullname,
