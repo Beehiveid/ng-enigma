@@ -1,14 +1,46 @@
-<form>
-  <div>
-      <input id="nik" name="nik" [(ngModel)]="employeeId" type="text">  
+<div class="content">
+  <div class="grid-4060">
+    <div class="banner">
+      <div class="gradient">
+        <div class="cover">
+          <div class="title">
+            Enigma
+          </div>
+          <div class="subtitle">
+            Payment Drive-thru<br>
+            Management
+          </div>
+        </div>
+        <div class="trademark">
+          <div class="home"><a routerLink="/"><i class="fa fa-home icon"></i></a></div>
+          <div><img src="../assets/img/Indihome_Fiber.png" width="50%" class="right shadow"></div>
+          <div class="middle"><img src="../assets/img/my-indihome.png" width="100%" class="shadow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="form">
+        <img src="../assets/img/logo_telkom.png" class="center">
+        <div>
+            <form>
+                <div class="input">
+                  <label>Username</label>
+                  <input id="nik" name="nik" [(ngModel)]="employeeId" type="text">  
+                </div>
+                <div class="input">
+                  <label>Password</label>
+                  <input id="passkey" name="passkey" [(ngModel)]="passKey" type="password">
+                </div>
+                <div class="input">
+                  <input type="checkbox"> Remember me
+                </div>
+              </form>
+              <button class="btn blue fluid" (click)="login()">Login</button>
+              <div class="help">
+                Don't have an <span class="link">account?</span> / Forget <span class="link">password?</span>
+              </div>
+              <p *ngIf="message">{{ message }}</p>
+        </div>
+    </div>
   </div>
-  <div>
-      <input id="passkey" name="passkey" [(ngModel)]="passKey" type="password">
-  </div>
-</form>
+</div>
 
-<p>
-  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
-</p>
-<p>{{message}}</p>

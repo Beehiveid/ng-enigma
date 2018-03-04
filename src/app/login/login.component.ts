@@ -13,34 +13,41 @@ export class LoginComponent implements OnInit {
   message: string;
 
   constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
+    
    }
 
   ngOnInit() {
     console.log(this.router.url);
-    
-  }
-
-  setMessage(){
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in':'out');
+    this.verify();
   }
 
   login(){
     this.message = 'Trying to log in ...';
-    console.log(this.employeeId);
-    console.log(this.passKey);
     
     this.authService.login(this.employeeId, this.passKey).subscribe(
-      result => {
-        console.log(result);
-        this.authService.loggedUser = result;
-        this.authService.isLoggedIn = result.login;
-        
+      res => {
         if (this.authService.isLoggedIn) {
           let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/';
           this.router.navigate([redirect]);
         }else{
-          this.message = result.message;
+          this.message = this.authService.message;
+        }
+      }
+    );
+  }
+
+  verify(){
+    console.log("verify");
+    
+    this.message = 'Verifying ...';
+    
+    this.authService.verify().subscribe(
+      res => {
+        if (this.authService.isLoggedIn) {
+          let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/';
+          this.router.navigate([redirect]);
+        }else{
+          this.message = this.authService.message;
         }
       }
     );
@@ -48,6 +55,5 @@ export class LoginComponent implements OnInit {
 
   logout(){
     this.authService.logout();
-    this.setMessage();
   }
 }
