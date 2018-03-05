@@ -10,7 +10,7 @@ import * as Cookies from 'es-cookie';
 export class AuthService {
   isLoggedIn = false;
   redirectUrl: string;
-  username: string;
+  
   loggedUser: any;
   message: string;
 
@@ -61,7 +61,10 @@ export class AuthService {
   }
 
   logout(): void{
-    this.username = null;
+    Cookies.remove('token');
+    console.log(Cookies.getAll());
+    
+    this.loggedUser = {};
     this.isLoggedIn = false;
   }
 

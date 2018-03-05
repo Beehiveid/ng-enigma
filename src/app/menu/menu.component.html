@@ -11,7 +11,7 @@
       <img src="../assets/img/user/joey.jpg" data-user="Joey">
       <div class="name">{{username}}</div>
     </div>
-    <button class="btn blue side" *ngIf="!isLoggedIn">Login</button>
-    <button class="btn red side" *ngIf="isLoggedIn">Logout</button>
+    <button class="btn blue side" *ngIf="!isLoggedIn" routerLink="/login">Login</button>
+    <button class="btn red side" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
   </div>
 </div>

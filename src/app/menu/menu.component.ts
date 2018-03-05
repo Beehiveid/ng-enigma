@@ -34,6 +34,10 @@ export class MenuComponent implements OnInit {
     );
   }
 
-
-
+  logout(){
+    this.authService.logout();
+    this.verify();
+    let redirect = '/';
+    this.router.navigate([redirect]);
+  }
 }
