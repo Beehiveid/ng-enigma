@@ -24,6 +24,7 @@ h2, h4.center{
 a,a:hover,a:active,a:visited{
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 a.link{

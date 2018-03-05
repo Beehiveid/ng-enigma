@@ -1,7 +1,7 @@
 <div class="header">
   <div><img src="../assets/img/logo_telkom.png" width="60%"></div>
   <div class="right">
-    <a class="link" href="/login" *ngIf="!isLoggedIn">Login</a>
-    <a class="link alert" *ngIf="isLoggedIn">Logout</a>
+    <a class="link" routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+    <a class="link alert" *ngIf="isLoggedIn" (click)="logout()">Logout</a>
   </div>
 </div>
