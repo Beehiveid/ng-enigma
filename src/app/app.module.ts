@@ -23,7 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { InterceptorService } from "./interceptor.service";
+
 
 
 @NgModule({
@@ -47,7 +47,7 @@ import { InterceptorService } from "./interceptor.service";
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [BillsService, AuthGuardService, AuthService, InterceptorService],
+  providers: [BillsService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
