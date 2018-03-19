@@ -47,7 +47,11 @@ export class AuthService {
       "token": Cookies.get('token')
     }
 
-    return this.http.post<any>("http://localhost:3000/users/verify",obj).do(
+    return this.http.get<any>("http://localhost:3000/users/verify",{
+      headers:{
+        'token': `${obj.token}`
+      }
+    }).do(
       result => {
         this.loggedUser = {
           fullname : result.fullname,

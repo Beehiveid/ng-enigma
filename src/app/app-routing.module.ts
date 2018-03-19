@@ -10,7 +10,8 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {
     path: "client",
-    component: PaymentComponent
+    component: PaymentComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: "login",
