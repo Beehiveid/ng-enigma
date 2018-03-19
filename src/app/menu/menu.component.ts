@@ -11,9 +11,11 @@ export class MenuComponent implements OnInit {
   isLoggedIn: boolean;
   username: string;
   activeMenu: string;
+  avatar: string;
+  avatarUrl: string;
 
   constructor(public authService: AuthService, public router: Router) { 
-    
+    this.avatarUrl = "../assets/img/user/";
   }
 
   ngOnInit() {
@@ -28,8 +30,11 @@ export class MenuComponent implements OnInit {
   verify(){
     this.authService.verify().subscribe(
       result => {
+        console.log(result);
+        
         this.isLoggedIn = this.authService.isLoggedIn;
         this.username = this.authService.loggedUser.fullname?this.authService.loggedUser.fullname: null;
+        this.avatar = this.authService.loggedUser.avatar?this.authService.loggedUser.avatar: "user.png";
       }
     );
   }

@@ -8,7 +8,7 @@
       <li [ngClass]="{'active': activeMenu == '/dashboard'}"><a routerLink="/client"><i class="fa fa-dashboard icon"></i>Dashboard</a></li>
     </ul>
     <div class="avatar" *ngIf="isLoggedIn">
-      <img src="../assets/img/user/joey.jpg" data-user="Joey">
+      <img [src]="avatarUrl+avatar">
       <div class="name">{{username}}</div>
     </div>
     <button class="btn blue side" *ngIf="!isLoggedIn" routerLink="/login">Login</button>

@@ -33,7 +33,8 @@ export class AuthService {
         this.loggedUser = {
           fullname : result.fullname,
           department : result.department,
-          access : result.access
+          access : result.access,
+          avatar : result.avatar
         };
         this.isLoggedIn = result.login;
         this.message = result.message;
@@ -47,12 +48,17 @@ export class AuthService {
       "token": Cookies.get('token')
     }
 
-    return this.http.post<any>("http://localhost:3000/users/verify",obj).do(
+    return this.http.get<any>("http://localhost:3000/users/verify",{
+      headers:{
+        'token': `${obj.token}`
+      }
+    }).do(
       result => {
         this.loggedUser = {
           fullname : result.fullname,
           department : result.department,
-          access : result.access
+          access : result.access,
+          avatar : result.avatar
         };
         this.isLoggedIn = result.login;
         this.message = result.message;
