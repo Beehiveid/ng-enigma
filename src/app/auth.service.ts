@@ -33,7 +33,8 @@ export class AuthService {
         this.loggedUser = {
           fullname : result.fullname,
           department : result.department,
-          access : result.access
+          access : result.access,
+          avatar : result.avatar
         };
         this.isLoggedIn = result.login;
         this.message = result.message;
@@ -56,7 +57,8 @@ export class AuthService {
         this.loggedUser = {
           fullname : result.fullname,
           department : result.department,
-          access : result.access
+          access : result.access,
+          avatar : result.avatar
         };
         this.isLoggedIn = result.login;
         this.message = result.message;
