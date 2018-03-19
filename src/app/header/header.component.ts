@@ -8,26 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isLoggedIn: boolean;
-
   constructor(public authService: AuthService, public router: Router) { }
 
   ngOnInit() {
-    this.verify();
     
   }
-
-  verify(){
-    this.authService.verify().subscribe(
-      result => {
-        this.isLoggedIn = this.authService.isLoggedIn;
-      }
-    );
-  }
-
-  logout(){
-    this.authService.logout();
-    this.router.navigate(["/"]);
-  }
-
 }
