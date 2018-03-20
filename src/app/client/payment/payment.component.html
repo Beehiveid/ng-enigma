@@ -21,6 +21,7 @@
           </div>
       </form>
       <button class="btn wide" (click) = "queryData()">CEK</button>
+      1119293002
     </div>
     <div class="center"></div>
   </div>
@@ -35,10 +36,15 @@
       <div class="details">
         <div><h4>Idle</h4></div>
         <div><h4 *ngIf="bills.queue.length">Queued</h4></div>
-        <div>
-          <li class="numberic" *ngFor="let data of bills.idle; index as i;" [attr.data-index]="i">
-            <div>
-              Layanan {{ data.NAMA_LAYANAN }} {{ data.HARGA | currency:'IDR' }}
+        <div class="grid">
+          <li *ngFor="let data of bills.idle; index as i;" [attr.data-index]="i">
+            <div class="bills">
+              <div class="title">
+                  <i class="fa icon" [ngClass]="{'fa-phone':data.NAMA_LAYANAN == 'Telepon', 'fa-globe':data.NAMA_LAYANAN == 'Internet'}"></i> {{ data.NAMA_LAYANAN }}
+              </div>
+              <div class="price">
+                  {{ data.HARGA | currency:'IDR' }}
+              </div>
             </div>
           </li>
         </div>
