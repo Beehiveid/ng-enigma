@@ -37,7 +37,7 @@
         <div><h4>Idle</h4></div>
         <div><h4 *ngIf="bills.queue.length">Queued</h4></div>
         <div class="grid">
-          <li *ngFor="let data of bills.idle; index as i;" [attr.data-index]="i">
+          <li *ngFor="let data of bills.idle; index as i;" [attr.data-index]="i" (click)="clickBills(data, data.check)">
             <div class="bills">
               <div class="title">
                   <i class="fa icon" [ngClass]="{'fa-phone':data.NAMA_LAYANAN == 'Telepon', 'fa-globe':data.NAMA_LAYANAN == 'Internet'}"></i> {{ data.NAMA_LAYANAN }}

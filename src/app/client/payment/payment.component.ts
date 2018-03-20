@@ -49,7 +49,7 @@ export class PaymentComponent implements OnInit {
               this.error = {};
               el.classList.remove("error"); 
             }else{
-              this.error.message = "ID konsumen tidak terdaftar";
+              this.error.message = "ID konsumen ini tidak memiliki tagihan IDLE";
               el.classList.add("error");
             }
           }
@@ -96,5 +96,15 @@ export class PaymentComponent implements OnInit {
     }else{
       this.notification = false;
     }
+  }
+
+  clickBills(data:any, check: any){
+    if(check == undefined){
+      data.check == false;
+    }
+
+    data.check = !data.check;
+    console.log(data);
+    
   }
 }
