@@ -161,11 +161,40 @@ button:focus{
     display: block;
     background: #c3f8c3;
     color:#055205;
+    
     padding: .5em;
     font-size: .7em;
     font-weight: bold;
     border: solid #055205 1px;
     border-radius: 2px;
+}
+
+.bills{
+    background: #dfe1e2;
+    color: rgb(105, 104, 104);
+    padding: 1em;
+    cursor: pointer;
+    margin-right: 2px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.bills > .title{
+    font-size: .7em;
+}
+
+.bills > .price {
+    font-weight: 100;
+    font-size: .8em;
+}
+
+li{
+    list-style: none;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
 }
 
 
