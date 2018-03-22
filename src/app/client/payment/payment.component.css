@@ -161,6 +161,7 @@ button:focus{
     display: block;
     background: #c3f8c3;
     color:#055205;
+    
     padding: .5em;
     font-size: .7em;
     font-weight: bold;
@@ -169,7 +170,7 @@ button:focus{
 }
 
 .bills{
-    background: rgb(223, 225, 226);
+    background: #dfe1e2;
     color: rgb(105, 104, 104);
     padding: 1em;
     cursor: pointer;

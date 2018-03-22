@@ -37,8 +37,8 @@
         <div><h4>Idle</h4></div>
         <div><h4 *ngIf="bills.queue.length">Queued</h4></div>
         <div class="grid">
-          <li *ngFor="let data of bills.idle; index as i;" [attr.data-index]="i" (click)="clickBills(data, data.check)">
-            <div class="bills">
+          <li *ngFor="let data of bills.idle; index as i;" [attr.data-index]="i"  (click)="clickBills(data, data.check)">
+            <div class="bills" [@billState]="data.check">
               <div class="title">
                   <i class="fa icon" [ngClass]="{'fa-phone':data.NAMA_LAYANAN == 'Telepon', 'fa-globe':data.NAMA_LAYANAN == 'Internet'}"></i> {{ data.NAMA_LAYANAN }}
               </div>
@@ -50,11 +50,18 @@
         </div>
         <div>
           <div *ngIf="bills.queue.length">
-            <li class="numberic" *ngFor="let data of bills.queue; index as i;" [attr.data-index]="i">
-              <div>
-                Layanan {{ data.NAMA_LAYANAN }} {{ data.HARGA | currency:'IDR' }}
-              </div>
-            </li>
+            <div class="grid">
+              <li *ngFor="let data of bills.queue">
+                <div class="bills" [@billState]="data.check">
+                  <div class="title">
+                      <i class="fa icon" [ngClass]="{'fa-phone':data.NAMA_LAYANAN == 'Telepon', 'fa-globe':data.NAMA_LAYANAN == 'Internet'}"></i> {{ data.NAMA_LAYANAN }}
+                  </div>
+                  <div class="price">
+                      {{ data.HARGA | currency:'IDR' }}
+                  </div>
+                </div>
+              </li>
+            </div>
           </div>
         </div>
         <div>Total <b>{{ bills.totalIdle | currency:'IDR' }}</b></div>
