@@ -12,6 +12,7 @@ import {
   keyframes
 } from '@angular/animations';
 
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -27,21 +28,35 @@ import {
         color: '#ffffff'
       })),
       transition('inactive => active', animate('100ms ease-in')),
-      transition('active => inactive', animate('100ms ease-out')),
-      transition(':enter',[
+      transition('active => inactive', animate('100ms ease-out'))
+    ]),
+    trigger('modal',[
+      transition(':leave', [
         animate(300, keyframes([
-          style({opacity: 0, transform: 'translateX(-100%)', offset: 0}),
-          style({opacity: 1, transform: 'translateX(15px)',  offset: 0.3}),
-          style({opacity: 1, transform: 'translateX(0)',     offset: 1.0})
+          style({opacity: 1,offset: 0}),
+          style({opacity: .7, offset: 0.7}),
+          style({opacity: 0, offset: 1.0})
         ]))
       ]),
-      transition(':leave',[
+      transition(':enter', [
         animate(300, keyframes([
-          style({opacity: 1, transform: 'translateX(0)',     offset: 0}),
-          style({opacity: 1, transform: 'translateX(-15px)', offset: 0.7}),
-          style({opacity: 0, transform: 'translateX(100%)',  offset: 1.0})
+          style({opacity: 0,offset: 0}),
+          style({opacity: .7, offset: 0.7}),
+          style({opacity: 1, offset: 1.0})
         ]))
       ]),
+    ]),
+    trigger('shake', [
+      transition('* => error',[
+        animate(400, keyframes([
+          style({transform: 'translate(30px)', offset: 0}),
+          style({transform: 'translate(-30px)', offset: .2}),
+          style({transform: 'translate(15px)', offset: .4}),
+          style({transform: 'translate(-15px)', offset: .6}),
+          style({transform: 'translate(8px)', offset: .8}),
+          style({transform: 'translate(0px)', offset: 1}),
+        ]))
+      ])
     ])
   ]
 })
@@ -74,6 +89,7 @@ export class PaymentComponent implements OnInit {
       if(String.IsNullOrWhiteSpace(this.customerId)){
         this.customerId = null;
         this.error.message = "Masukkan ID konsumen anda";
+        this.error.state = "error";
         el.classList.add("error");
         throw({"message":"Costumer ID tidak boleh kosong"});
       }else{
@@ -84,8 +100,10 @@ export class PaymentComponent implements OnInit {
               console.log(result);
               this.error = {};
               el.classList.remove("error"); 
+              this.error.state = "noerror";
             }else{
               this.error.message = "ID konsumen ini tidak memiliki tagihan IDLE";
+              this.error.state = "error";
               el.classList.add("error");
             }
           }

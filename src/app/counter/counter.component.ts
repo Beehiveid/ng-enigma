@@ -24,6 +24,18 @@ import { trigger, style, animate, transition, keyframes, query, stagger } from "
             style({ opacity: 0, transform: 'translateX(-20%)', offset: 1}),
           ]))]), { optional : true }),
       ])
+    ]),
+    trigger('shake', [
+      transition('* => error',[
+        animate(400, keyframes([
+          style({transform: 'translate(30px)', offset: 0}),
+          style({transform: 'translate(-30px)', offset: .2}),
+          style({transform: 'translate(15px)', offset: .4}),
+          style({transform: 'translate(-15px)', offset: .6}),
+          style({transform: 'translate(8px)', offset: .8}),
+          style({transform: 'translate(0px)', offset: 1}),
+        ]))
+      ])
     ])
   ]
 })
@@ -51,6 +63,7 @@ export class CounterComponent implements OnInit {
         
         this.userId = null;
         this.error.message = "Masukkan ID konsumen";
+        this.error.state = "error";
         this.queuedBills = {};
         this.message = null;
         el.classList.add("error");
@@ -68,6 +81,7 @@ export class CounterComponent implements OnInit {
           this.error = {};
           this.message = null;
           el.classList.remove("error");
+          this.error.state = "noerror";
           this.lastId = this.userId;
           if(this.queuedBills.details == undefined){
             this.message = "Tidak ada antrian untuk ID " + id;

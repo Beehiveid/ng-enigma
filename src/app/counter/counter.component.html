@@ -6,8 +6,8 @@
       <app-breadcrumb></app-breadcrumb>
       <div>
         <form>
-          <div class="grid-2555">
-            <div class="input">
+          <div class="grid-2555" [@shake]="error.state">
+            <div class="input" >
                 <input type="text" class="txt" id="custId" name="user" placeholder="User ID" [(ngModel)]="userId">
                 <label class="error" *ngIf="error.message" for="userid">{{ error.message }}</label>
             </div>

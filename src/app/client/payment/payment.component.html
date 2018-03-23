@@ -11,7 +11,7 @@
             <input type="radio" value = "internet" name="accountType" [(ngModel)] = "accountType">No. Internet
           </div>
           
-          <div>
+          <div [@shake]="error.state">
             <label>No. Telepon / Internet</label>
             <input type="text" class="txt" id="custId" name="custNumber" placeholder="073xxxxxxx/111xxxxxx" [(ngModel)] = "customerId">
             <label class="error" *ngIf="error.message" for="custNumber">{{ error.message }}</label>
@@ -27,9 +27,9 @@
   </div>
 
 <!-- The Modal -->
-<div class="modal" *ngIf="bills.queue || bills.idle">
+<div class="modal" *ngIf="bills.queue || bills.idle" @modal>
   <!-- Modal content -->
-  <div class="modal-content" >
+  <div class="modal-content">
     <span class="close" (click)="closeModal()">&times;</span>
     <ul>
       <h3>{{ bills.nama}} NCLI-{{bills.id}}</h3>
