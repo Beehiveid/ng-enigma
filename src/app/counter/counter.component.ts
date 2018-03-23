@@ -62,6 +62,7 @@ export class CounterComponent implements OnInit {
       if(String.IsNullOrWhiteSpace(this.userId)){
         
         this.userId = null;
+        this.lastId = this.userId;
         this.error.message = "Masukkan ID konsumen";
         this.error.state = "error";
         this.queuedBills = {};
