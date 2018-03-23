@@ -62,7 +62,6 @@ import {
 })
 export class PaymentComponent implements OnInit {
   customerId: any;
-  accountType: string;
   list:any;
   obj = [];
   total: number;
@@ -74,7 +73,6 @@ export class PaymentComponent implements OnInit {
   constructor(private _bills : BillsService) { }
 
   ngOnInit() {
-    this.accountType = "telepon";
     this.modal = false;
     this.notification = false;
     this.customerId = null;
@@ -109,7 +107,6 @@ export class PaymentComponent implements OnInit {
           }
         );
       this.customerId = null;
-      this.accountType = "telepon";
       }
     } catch (error) {
       console.log(error.message);

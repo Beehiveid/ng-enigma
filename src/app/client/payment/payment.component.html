@@ -5,12 +5,6 @@
     <div class="center"></div>
     <div class="center">
       <form>
-          <label>Pilih salah satu:</label>
-          <div class="radio-group" >
-            <input type="radio" value = "telepon" name="accountType" [(ngModel)] = "accountType">No. Telepon
-            <input type="radio" value = "internet" name="accountType" [(ngModel)] = "accountType">No. Internet
-          </div>
-          
           <div [@shake]="error.state">
             <label>No. Telepon / Internet</label>
             <input type="text" class="txt" id="custId" name="custNumber" placeholder="073xxxxxxx/111xxxxxx" [(ngModel)] = "customerId">
@@ -21,7 +15,7 @@
           </div>
       </form>
       <button class="btn wide" (click) = "queryData()">CEK</button>
-      1119293002
+      
     </div>
     <div class="center"></div>
   </div>
