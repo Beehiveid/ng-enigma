@@ -11,6 +11,12 @@ button:focus{
     outline: none;
 }
 
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+
 button.red{
     background: #c73129;
     color: white;
@@ -26,6 +32,42 @@ button.blue{
 button.grey{
     background: #797979;
     color: white;
+}
+
+button.red.ripple:hover{
+    background: #c73129 radial-gradient(circle, transparent 1%, #c73129 1%) center/15000%;
+}
+button.red.ripple:active{
+    background-color: #f7908b;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+button.green.ripple:hover{
+    background: #019835 radial-gradient(circle, transparent 1%, #019835 1%) center/15000%;
+}
+button.green.ripple:active{
+    background-color: #5adb87;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+button.blue.ripple:hover{
+    background: #0099FF radial-gradient(circle, transparent 1%, #0099FF 1%) center/15000%;
+}
+button.blue.ripple:active{
+    background-color: rgb(103, 191, 250);
+    background-size: 100%;
+    transition: background 0s;
+}
+
+button.grey.ripple:hover{
+    background: #797979 radial-gradient(circle, transparent 1%, #797979 1%) center/15000%;
+}
+button.grey.ripple:active{
+    background-color: #d3d2d2;
+    background-size: 100%;
+    transition: background 0s;
 }
 
 button.slim{
