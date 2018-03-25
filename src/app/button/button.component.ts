@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'ui-button',
@@ -10,9 +10,10 @@ export class ButtonComponent implements OnInit {
   private styleTxt: string;
 
   constructor() { }
-
   
-
+  // Use this if we want the parent listen to children events
+  @Output() onClicked = new EventEmitter<boolean>();
+  
   @Input()
   set text(txt: string){
     this.buttonTxt = txt || "Default";
@@ -40,6 +41,11 @@ export class ButtonComponent implements OnInit {
 
   get shape(){
     return this.styleTxt;
+  }
+
+  // Use this if we want the parent listen to children events
+  clicked(val: boolean){
+    this.onClicked.emit(val);
   }
 
   ngOnInit() {
