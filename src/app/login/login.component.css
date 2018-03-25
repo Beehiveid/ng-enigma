@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
 }
- .banner{
+.banner{
     position: relative;
     height: 100vh;
     background: url(http://localhost:4200/assets/img/banners.jpg);
