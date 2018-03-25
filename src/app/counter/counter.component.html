@@ -12,7 +12,7 @@
                 <label class="error" *ngIf="error.message" for="userid">{{ error.message }}</label>
             </div>
             <div>
-                <button class="btn blue wide find" (click)="getQueuedBills()">Find</button>
+                <ui-button text="Find" tone="blue wide bold" (click)="getQueuedBills()"></ui-button>
             </div>
             
           </div>
@@ -43,8 +43,8 @@
               </div>
             </div>
             <div class="data right">
-              <button class="btn green wide submit" (click)="showModal(true)">Submit</button>
-              <button class="btn red wide submit" (click)="showModal(false)">Cancel</button>
+              <ui-button text="Submit" tone="green wide" (click)="showModal(true)"></ui-button>
+              <ui-button text="Cancel" tone="red wide" (click)="showModal(false)"></ui-button>
             </div>
           </div>
           <div class="message alert" *ngIf="message">
