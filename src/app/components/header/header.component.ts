@@ -3,7 +3,7 @@ import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'ui-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
