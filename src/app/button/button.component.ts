@@ -10,7 +10,7 @@ export class ButtonComponent implements OnInit {
   private styleTxt: string;
 
   constructor() { }
-  
+
   // Use this if we want the parent listen to children events
   @Output() onClicked = new EventEmitter<boolean>();
   
@@ -23,6 +23,7 @@ export class ButtonComponent implements OnInit {
     return this.buttonTxt;
   }
 
+  // Button css set styling
   @Input()
   set tone(txt: string){
     console.log(txt);
@@ -30,16 +31,6 @@ export class ButtonComponent implements OnInit {
   }
 
   get tone(){
-    return this.styleTxt;
-  }
-
-  @Input()
-  set shape(txt: string){
-    console.log(txt);
-    this.styleTxt += " "+txt;
-  }
-
-  get shape(){
     return this.styleTxt;
   }
 

@@ -63,8 +63,8 @@
         </div>
       </div>
       <div *ngIf="bills.idle.length">
-        <button class="btn yes" (click)="queueBills()">Accept</button>
-        <button class="btn no" (click)="closeModal()">Cancel</button>
+        <ui-button text="Accept" tone="green wide" (click)="queueBills()"></ui-button>
+        <ui-button text="Cancel" tone="red wide" (click)="closeModal()"></ui-button>
       </div>
     </ul>
     <div class="info" *ngIf="!bills.idle.length">
