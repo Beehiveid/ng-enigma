@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { HeaderComponent } from './header/header.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { ButtonComponent } from './button/button.component';
 
 
 
@@ -38,7 +39,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     LoginComponent,
     MenuComponent,
     HeaderComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    ButtonComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,47 @@
+button{
+    text-decoration: none;
+    background: none;
+    padding: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+}
+
+button:focus{
+    outline: none;
+}
+
+button.red{
+    background: #c73129;
+    color: white;
+}
+button.green{
+    background: #019835;
+    color: white;
+}
+button.blue{
+    background: #0099FF;
+    color: white;
+}
+button.grey{
+    background: #797979;
+    color: white;
+}
+
+
+button.wide{
+    padding: 1em 2em;
+}
+
+button.wider{
+    padding: 1em 3em;
+}
+
+button.slim{
+    padding: .5em 1em;
+}
+
+button.bold{
+    font-weight: bold;
+    font-size: 15px;
+}
