@@ -38,25 +38,6 @@ li.active a{
     color:#DA2421;
 }
 
-.btn{
-    text-decoration: none;
-    padding: .5em 1em;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    position: absolute;
-    bottom: 2.5vmax;
-    left: 1.7vmax;
-    cursor: pointer;
-}
-.btn.login{
-    background: #0099FF; 
-}
-
-.btn.logout{
-    background: #DB241B; 
-}
-
 .avatar > img{
     border-radius: 100px;
     width: 60%;
@@ -81,46 +62,8 @@ li.active a{
     font-weight: bold;
 }
 
-.btn{
-    text-decoration: none;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    padding: .5em 1em;
-}
-
 .side{
     position: absolute;
     bottom: 2.5vmax;
     left: 1.5vmax;
-}
-
-.btn.blue{
-    background: #0099FF; 
-}
-
-.btn.green{
-    background: #019835; 
-}
-
-.btn.red{
-    background: #DB241B; 
-}
-
-.btn.find{
-    border-style: solid;
-    border-width: 2px;
-    border-color: #0099FF;
-    padding: 1em;
-}
-
-.btn.submit{
-    border: none;
-    padding: 1em;
-}
-
-.btn.wide{
-    padding-right: 2em;
-    padding-left: 2em;
 }
