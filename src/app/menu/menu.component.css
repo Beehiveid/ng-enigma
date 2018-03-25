@@ -90,10 +90,10 @@ li.active a{
     padding: .5em 1em;
 }
 
-.btn.side{
+.side{
     position: absolute;
     bottom: 2.5vmax;
-    left: 1.7vmax;
+    left: 1.5vmax;
 }
 
 .btn.blue{

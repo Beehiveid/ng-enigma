@@ -11,7 +11,7 @@
       <img [src]="avatarUrl+avatar">
       <div class="name">{{username}}</div>
     </div>
-    <button class="btn blue side" *ngIf="!isLoggedIn" routerLink="/login">Login</button>
-    <button class="btn red side" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+    <ui-button text="Login" tone="blue slim" class="side" *ngIf="!isLoggedIn" routerLink="/login"></ui-button>
+    <ui-button text="Logout" tone="red slim" class="side" *ngIf="isLoggedIn" (click)="logout()"></ui-button>
   </div>
 </div>
