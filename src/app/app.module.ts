@@ -20,10 +20,10 @@ import { CounterComponent } from './counter/counter.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu.component';
-import { HeaderComponent } from './header/header.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { ButtonComponent } from './button/button.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { HeaderComponent } from './components/header/header.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ButtonComponent } from './components/button/button.component';
 
 
 
