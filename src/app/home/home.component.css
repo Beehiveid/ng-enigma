@@ -78,7 +78,6 @@ div.container > div.box{
     /* padding: .5em; */
     margin: auto;
     position: relative;
-    box-sizing: border-box;
 }
 
 .news-content > .title::before{
@@ -90,7 +89,6 @@ div.container > div.box{
     left: 0;
     width: 100%;
     padding: .5em .5em 2em .5em;
-    box-sizing: border-box;
 }
 
 .news-content > .data{
@@ -113,7 +111,6 @@ div.container > div.box{
     font-weight: bold;
     height: 12vmax;
     position: relative;
-    box-sizing: border-box;
 }
 
 .big-number > span{

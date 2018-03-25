@@ -1,0 +1,94 @@
+button{
+    text-decoration: none;
+    background: none;
+    padding: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+}
+
+button:focus{
+    outline: none;
+}
+
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+}
+
+
+button.red{
+    background: #c73129;
+    color: white;
+}
+button.green{
+    background: #019835;
+    color: white;
+}
+button.blue{
+    background: #0099FF;
+    color: white;
+}
+button.grey{
+    background: #797979;
+    color: white;
+}
+
+button.red.ripple:hover{
+    background: #c73129 radial-gradient(circle, transparent 1%, #c73129 1%) center/15000%;
+}
+button.red.ripple:active{
+    background-color: #f7908b;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+button.green.ripple:hover{
+    background: #019835 radial-gradient(circle, transparent 1%, #019835 1%) center/15000%;
+}
+button.green.ripple:active{
+    background-color: #5adb87;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+button.blue.ripple:hover{
+    background: #0099FF radial-gradient(circle, transparent 1%, #0099FF 1%) center/15000%;
+}
+button.blue.ripple:active{
+    background-color: rgb(103, 191, 250);
+    background-size: 100%;
+    transition: background 0s;
+}
+
+button.grey.ripple:hover{
+    background: #797979 radial-gradient(circle, transparent 1%, #797979 1%) center/15000%;
+}
+button.grey.ripple:active{
+    background-color: #d3d2d2;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+button.slim{
+    padding: .5em 1em;
+}
+
+button.wide{
+    padding: 1em 2em;
+}
+
+button.wider{
+    padding: 1em 3em;
+}
+
+button.full{
+    width: 100%;
+    border-radius: 4px;
+}
+
+
+button.bold{
+    font-weight: bold;
+    font-size: 15px;
+}

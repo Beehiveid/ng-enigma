@@ -5,13 +5,7 @@
     <div class="center"></div>
     <div class="center">
       <form>
-          <label>Pilih salah satu:</label>
-          <div class="radio-group" >
-            <input type="radio" value = "telepon" name="accountType" [(ngModel)] = "accountType">No. Telepon
-            <input type="radio" value = "internet" name="accountType" [(ngModel)] = "accountType">No. Internet
-          </div>
-          
-          <div>
+          <div [@shake]="error.state">
             <label>No. Telepon / Internet</label>
             <input type="text" class="txt" id="custId" name="custNumber" placeholder="073xxxxxxx/111xxxxxx" [(ngModel)] = "customerId">
             <label class="error" *ngIf="error.message" for="custNumber">{{ error.message }}</label>
@@ -20,14 +14,13 @@
             *Jika anda memiliki lebih dari satu layanan, maka tagihan yang muncul adalah total tagihan yang belum dibayarkan
           </div>
       </form>
-      <button class="btn wide" (click) = "queryData()">CEK</button>
-      1119293002
+      <ui-button text="CEK" tone="grey wider bold" (click)="queryData()"></ui-button>
     </div>
     <div class="center"></div>
   </div>
 
 <!-- The Modal -->
-<div class="modal" *ngIf="bills.queue || bills.idle">
+<div class="modal" *ngIf="bills.queue || bills.idle" @modal>
   <!-- Modal content -->
   <div class="modal-content" >
     <span class="close" (click)="closeModal()">&times;</span>
@@ -70,8 +63,8 @@
         </div>
       </div>
       <div *ngIf="bills.idle.length">
-        <button class="btn yes" (click)="queueBills()">Accept</button>
-        <button class="btn no" (click)="closeModal()">Cancel</button>
+        <ui-button text="Accept" tone="green wide" (click)="queueBills()"></ui-button>
+        <ui-button text="Cancel" tone="red wide" (click)="closeModal()"></ui-button>
       </div>
     </ul>
     <div class="info" *ngIf="!bills.idle.length">

@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
 }
- .banner{
+.banner{
     position: relative;
     height: 100vh;
     background: url(http://localhost:4200/assets/img/banners.jpg);
@@ -118,31 +118,12 @@
     border: 1px solid hsl(0, 0%, 65%);
     border-radius: 4px;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .input > input[type="checkbox"] {
     /* margin: 0; */
     transform: scale(1.5);
     border:none;
-}
-
-.btn{
-    border: none;
-    padding: 1em;
-    border-radius: 4px;
-    box-sizing: border-box;
-    cursor: pointer;
-    margin-bottom: 5px;
-}
-
-.btn.blue{
-    background: #0099FF; 
-    color: white;
-}
-
-.btn.fluid{
-    width: 100%;
 }
 
 .help{

@@ -6,7 +6,6 @@ div.input > input.txt{
     padding: 1em;
     display: block;
     width: 100%;
-    box-sizing: border-box;
 }
 
 div.input{

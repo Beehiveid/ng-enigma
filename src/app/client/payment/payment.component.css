@@ -28,7 +28,6 @@ input.txt{
     width: 100%;
     border-radius: 3px;
     text-align: center;
-    box-sizing: border-box;
 }
 
 div{
@@ -88,42 +87,6 @@ ul li.numberic{
     list-style-type: decimal-leading-zero;
 }
 
-.btn{
-    border: none;
-    padding: 1em 2em;
-    background: #797979;
-    color: #fff;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 2px;
-}
-
-.btn:disabled{
-    cursor: not-allowed;
-}
-.btn.wide{
-    padding: 1em 3em;
-}
-
-.btn.yes{
-    background: #137013;
-    color: #ffffff;
-}
-
-.btn.yes:hover{
-    background: #125a12;
-}
-
-.btn.no{
-    background: #971515;
-    color: #ffffff;
-}
-
-.btn.no:hover{
-    background: #490303;
-}
-
 label.error{
     background: #fab7b7;
     /* background: #fff;  */
@@ -175,7 +138,6 @@ button:focus{
     padding: 1em;
     cursor: pointer;
     margin-right: 2px;
-    box-sizing: border-box;
     border-radius: 5px;
 }
 
