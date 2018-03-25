@@ -126,23 +126,6 @@
     border:none;
 }
 
-.btn{
-    border: none;
-    padding: 1em;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 5px;
-}
-
-.btn.blue{
-    background: #0099FF; 
-    color: white;
-}
-
-.btn.fluid{
-    width: 100%;
-}
-
 .help{
     color: hsl(0, 1%, 44%);
     font-size: .7em;

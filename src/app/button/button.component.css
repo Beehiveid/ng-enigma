@@ -28,6 +28,9 @@ button.grey{
     color: white;
 }
 
+button.slim{
+    padding: .5em 1em;
+}
 
 button.wide{
     padding: 1em 2em;
@@ -37,9 +40,11 @@ button.wider{
     padding: 1em 3em;
 }
 
-button.slim{
-    padding: .5em 1em;
+button.full{
+    width: 100%;
+    border-radius: 4px;
 }
+
 
 button.bold{
     font-weight: bold;
